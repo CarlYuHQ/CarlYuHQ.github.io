@@ -58,7 +58,7 @@ author_profile: true
 
 <h2>下载专区</h2>
 <ul>
-  <li><a href="../files/北京大学2025春季课表.xlsx">北京大学2025年春季课表(可搜索)</a></li>
+  <li><a href="..\files\Industry_credit_spread_forecasting_based_on_time_series_data_and_industry_relationships.pdf">Industry credit spread forecasting based on time series data and industry relationships(可搜索 第三作者)</a></li>
 </ul>
 
 <h2>友链</h2>
@@ -68,9 +68,9 @@ author_profile: true
     <!-- 每个好友卡片 -->
     <div class="friend-card" style="background-color: #f0f0f0;">
       <a href="https://iculizhi.github.io" target="_blank">
-        <img src="../images/xj.jpg" alt="ICUlizhi's Blog" class="avatar" onerror="this.onerror=null;this.src='../images/default-avatar.jpg';">
-        <div class="friend-name">ICUlizhi's Blog</div>
-        <div class="friend-intro">上士闻道, 勤而行之</div>
+        <img src="../images/self.png" alt="ICUlizhi's Blog" class="avatar" onerror="this.onerror=null;this.src='../images/self.jpg';">
+        <div class="friend-name">CarlYuHQ's Blog</div>
+        <div class="friend-intro">朝闻道，夕死可矣</div>
       </a>
     </div>
   </div>
@@ -81,22 +81,20 @@ author_profile: true
 
 <br/>
 
-<!-- Giscus 评论系统嵌入 -->
-在你修改前, 这个评论区不是你的
+
 
 <script src="https://giscus.app/client.js"
-        data-repo="ICUlizhi/ICUlizhi.github.io"
-        data-repo-id="R_kgDOKfCXRQ"
+        data-repo="CarlYuHQ/CarlYuHQ.github.io"
+        data-repo-id="R_kgDOO0EBhw"
         data-category="Announcements"
-        data-category-id="DIC_kwDOKfCXRc4CknGa"
-        data-mapping="url"
+        data-category-id="DIC_kwDOO0EBh84Cq4-A"
+        data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
-        data-emit-metadata="1"
+        data-emit-metadata="0"
         data-input-position="top"
-        data-theme="light"
+        data-theme="preferred_color_scheme"
         data-lang="zh-CN"
-        data-loading="lazy"
         crossorigin="anonymous"
         async>
 </script>
