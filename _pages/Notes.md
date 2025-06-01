@@ -97,9 +97,9 @@ author_profile: true
     <div class="timeline-item">
       <div class="timeline-node"></div>
         <div class="content">
-                <h3>你好, EECS</h3>
-                <span class="time">2022 秋</span>
-                <p>入燕园，初窥计算机语言与 Github</p>
+                <h3>Hello! Good Bye! And Restart!</h3>
+                <span class="time">2025 春</span>
+                <p>很惭愧，在本科即将结束之际才开始搭建个人主页，目前部署在Github上，欢迎大家关注和讨论</p>
         </div>
     </div>
     </div>
@@ -107,9 +107,9 @@ author_profile: true
 
 
 
-## 111
+## Looking forward to see you in PKU!
 
-{% assign paths = "nameofthemd.md" | split: "," %}
+{% assign paths = "Data-Structure-Algorithm.md" | split: "," %}
 
 {% for post in site.Notes reversed %}
   {% for path in paths %}
