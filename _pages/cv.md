@@ -47,19 +47,24 @@ redirect_from:
     <br/><br/>
 </body>
 
-* Name: Your Name 
-* Phone and WeChat: 15705694836 / Email: [2200012917@stu.pku.edu.cn](2200012917@stu.pku.edu.cn)
-* Personal Website: [iculizhi.github.io](https://iculizhi.github.io/)
+* Name: Carl 
+* Phone and WeChat: 13051172066 / Email: [2100016634@stu.pku.edu.cn](2100016634@stu.pku.edu.cn)
+* Personal Website: [CarlYuHQ.github.io](https://CarlYuHQ.github.io/)
 
 Education
 ======
-* Undergraduate: Beijing, Peking University, 2022
-  * Major: Information and Computing Science (Turing Class), School of Electronics Engineering and Computer Science
-  * Double Degree: Economics, National School of Development
+* Undergraduate: Beijing, Peking University, 2021
+  * Major: Big Data Management and Application, Department of Information Management
 
 Awards
 ======
-* Silver Medal, China Mathematical Olympiad (CMO)
+* 31st "Challenge Cup" Series Competition at Peking University, 2nd Prize(University Level), 1st Prize(Department Level)
+* 32nd "Challenge Cup" Series Competition at Peking University, 1st Prize(University Level), Special Prize(Department Level)
+* National Publishing Discipline Innovation, Entrepreneurship, and Creativity Competition, 2nd Prize (National Level)
+* Merit Student(2021–2022,2022–2023,2023–2024)
+* ICBC STAR Scholarship(2021–2022)
+* Spiritual Guide Leadership Scholarship(2022–2023)
+* National Scholarship(2023-2024)
 
 <!--
 Work experience
