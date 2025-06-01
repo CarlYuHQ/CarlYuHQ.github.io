@@ -1,9 +1,9 @@
 ---
-title: "pku.github.io"
+title: "Snakegame"
 collection: Repositories
 type: "Repositories"
-permalink: /Repositories/pku.github.io
-venue: "Peking Univercity"
+permalink: /Repositories/Snakegame
+venue: "Peking University"
 date: 2025-06-01
 location: "Beijing, China"
 ---
