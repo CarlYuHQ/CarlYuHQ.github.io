@@ -46,7 +46,7 @@ redirect_from:
 </body>
 
 * 姓名: 于汉清
-* 电话及微信 13051172066 / 邮箱 [2100016634@stu.pku.edu.cn](2100016634@stu.pku.edu.cn)
+* 电话及微信: 13051172066 / 邮箱 [2100016634@stu.pku.edu.cn](2100016634@stu.pku.edu.cn)
 * 个人主页：[CarlYuHQ.github.io](https://CarlYuHQ.github.io/)
 
 学历
