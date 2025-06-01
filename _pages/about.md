@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a third year undergraduate student from [Department of Information Management](https://www.im.pku.edu.cn/), [Peking University](https://www.pku.edu.cn/), currently enrolled in the [MengFan](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/mf/index.htm)'s research group. At the same time, I study for a Master's degree in Big Data Management and Application at the Department of Information Management.
+I'm a undergraduate student from [Department of Information Management](https://www.im.pku.edu.cn/), [Peking University](https://www.pku.edu.cn/), currently enrolled in the [MengFan](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/mf/index.htm)'s research group. At the same time, I study for a Master's degree in Big Data Management and Application at the Department of Information Management.
 
 My research interests and skills are concentrated in the fields of ml, nlp, llms, etc.  <!--My research interest includes computer vision, computer graphics, machine learning, and computational photography.-->
 
