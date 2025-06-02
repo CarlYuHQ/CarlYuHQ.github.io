@@ -23,5 +23,5 @@ The website is still under construction. Codes and course notes are uploading qu
 <h2>Contact me</h2>
 
 
-[Email](mailto:2100016634@stu.pku.edu.cn) / [Github](https://github.com/CarlYuHQ) / [Wechat](../images/wechat.png) 
+[Email](2100016634@stu.pku.edu.cn) / [Github](https://github.com/CarlYuHQ) / [Wechat](../images/wechat.png) 
 
