@@ -2,7 +2,7 @@
 title: "PKUtimes"
 collection: Blogs
 type: "Blogs"
-permalink: /MyBlogs/PKUtimes
+permalink: /hiddenBlogs/PKUtimes
 venue: "Peking Univercity"
 date: 2025-6-01
 location: "Beijing, China"
