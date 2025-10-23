@@ -67,7 +67,7 @@ Awards
 * ICBC STAR Scholarship(2021–2022)
 * Spiritual Guide Leadership Scholarship(2022–2023)
 * National Scholarship(2023-2024)
-* Master's Academic Scholarship (2025-2026)
+* Master's Academic Scholarship (2024-2025)
 
 <!--
 Work experience
