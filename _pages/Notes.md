@@ -99,7 +99,7 @@ author_profile: true
         <div class="content">
                 <h3>Hello! Good Bye! And Restart!</h3>
                 <span class="time">2025 春</span>
-                <p>很惭愧，在本科即将结束之际才开始搭建个人主页，目前部署在Github上，欢迎大家关注和讨论</p>
+                <p>个人主页目前部署在Github上，欢迎大家关注和讨论</p>
         </div>
     </div>
     </div>

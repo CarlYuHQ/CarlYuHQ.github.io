@@ -59,6 +59,7 @@ author_profile: true
 <h2>下载专区</h2>
 <ul>
   <li><a href="..\files\Industry_credit_spread_forecasting_based_on_time_series_data_and_industry_relationships.pdf">Industry credit spread forecasting based on time series data and industry relationships(可搜索 第三作者)</a></li>
+  <li>Context-based Document-level Relation Extraction(论文在投)</li>
 </ul>
 
 <h2>友链</h2>

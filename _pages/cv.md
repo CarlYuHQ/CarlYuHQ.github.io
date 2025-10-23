@@ -55,6 +55,8 @@ Education
 ======
 * Undergraduate: Beijing, Peking University, 2021
   * Major: Big Data Management and Application, Department of Information Management
+* Master: Beijing, Peking University, 2025
+  * Major: Big Data Management and Application, Department of Information Management
 
 Awards
 ======
@@ -65,6 +67,7 @@ Awards
 * ICBC STAR Scholarship(2021–2022)
 * Spiritual Guide Leadership Scholarship(2022–2023)
 * National Scholarship(2023-2024)
+* Master's Academic Scholarship (2025-2026)
 
 <!--
 Work experience
