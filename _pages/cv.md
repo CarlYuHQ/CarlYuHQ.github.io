@@ -48,7 +48,7 @@ redirect_from:
 </body>
 
 * Name: Carl 
-* Phone and WeChat: 13051172066 / Email: [2100016634@stu.pku.edu.cn](2100016634@stu.pku.edu.cn)
+* Phone and WeChat: 13051172066 / Email: [2501211863@stu.pku.edu.cn](2501211863@stu.pku.edu.cn)
 * Personal Website: [CarlYuHQ.github.io](https://CarlYuHQ.github.io/)
 
 Education
