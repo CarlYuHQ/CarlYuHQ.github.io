@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-As a master’s student at  [Department of Information Management](https://www.im.pku.edu.cn/), [Peking University](https://www.pku.edu.cn/),  I am currently part of the [Win-Bin Huang](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/hwb/index.htm) and [MengFan](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/mf/index.htm)'s research group.  
+As a master’s student at  [Department of Information Management](https://www.im.pku.edu.cn/), [Peking University](https://www.pku.edu.cn/),  I am currently part of the [Win-Bin Huang](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/hwb/index.htm) [BuYi](https://im.pku.edu.cn/szll/xxzzyxxsjyjs/by/) and [MengFan](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/mf/index.htm)'s research group.  
 
 My research interests and skills are concentrated in the fields of ml, nlp, llms, etc.  <!--My research interest includes computer vision, computer graphics, machine learning, and computational photography.-->
 
