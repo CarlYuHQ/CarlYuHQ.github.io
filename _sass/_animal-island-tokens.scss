@@ -48,6 +48,10 @@
 
   --ac-code-bg: #2b2118;
   --ac-code-border: #3d3028;
+
+  /* banner intrinsic aspect ratios (match images/ac/*.png) */
+  --ac-banner-header-ratio: 22600 / 1148;
+  --ac-banner-footer-ratio: 22536 / 3071;
 }
 
 [data-theme="night"] {
