@@ -10,11 +10,15 @@ var $hlinks = $("#site-nav .hidden-links");
 
 var breaks = [];
 var MAX_NAV_ITER = 40;
-var CLOCK_RESERVE_PX = 150;
+var TOOLBAR_RESERVE_PX = 220;
+
+function getToolbarReserve() {
+  return $(".masthead__toolbar").length ? TOOLBAR_RESERVE_PX : 0;
+}
 
 function getAvailableSpace() {
   var navW = $nav.width() || 0;
-  var reserve = $(".masthead__clock").length ? CLOCK_RESERVE_PX : 0;
+  var reserve = getToolbarReserve();
   var btnW = $btn.hasClass("hidden") ? 0 : $btn.outerWidth(true) || 0;
   return Math.max(120, navW - btnW - 30 - reserve);
 }

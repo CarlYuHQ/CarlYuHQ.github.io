@@ -71,15 +71,18 @@ a {
 
 .masthead__inner-wrap--split {
   position: relative !important;
-  padding-right: 11.5rem !important;
+  padding-right: 17rem !important;
 }
 
-.masthead__clock {
+.masthead__toolbar {
   position: absolute !important;
   top: 50% !important;
-  right: 0.75rem !important;
+  right: 0.35rem !important;
   left: auto !important;
   z-index: 30;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
   transform: translateY(-50%);
 }
 

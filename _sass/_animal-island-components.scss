@@ -1,7 +1,7 @@
-/* --- Masthead: nav full width + clock pinned top-right --- */
+/* --- Masthead: nav + right toolbar (theme + clock) --- */
 .masthead__inner-wrap--split {
   position: relative;
-  padding-right: 11.5rem;
+  padding-right: 17rem;
 }
 
 .masthead__menu {
@@ -16,7 +16,7 @@
   box-sizing: border-box;
 
   button:not(.hidden) {
-    right: 11.5rem !important;
+    right: 17rem !important;
     z-index: 35;
   }
 
@@ -26,16 +26,25 @@
   }
 }
 
-.masthead__clock {
+.masthead__toolbar {
   position: absolute;
   top: 50%;
-  right: 0.75rem;
+  right: 0.35rem;
   z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   transform: translateY(-50%);
   pointer-events: none;
 
+  .ac-theme-toggle,
   .ac-datetime {
     pointer-events: auto;
+  }
+
+  .ac-theme-toggle {
+    margin-left: 0;
+    flex-shrink: 0;
   }
 }
 
@@ -148,21 +157,22 @@
 
 @media (max-width: 900px) {
   .masthead__inner-wrap--split {
-    padding-right: 9.5rem;
+    padding-right: 14rem;
   }
 }
 
 @media (max-width: 768px) {
   .masthead__inner-wrap--split {
     padding-right: 0;
-    padding-bottom: 3.25rem;
+    padding-bottom: 3.5rem;
   }
 
-  .masthead__clock {
+  .masthead__toolbar {
     top: auto;
     bottom: 0.35rem;
-    right: 50%;
-    transform: translateX(50%);
+    right: 0.5rem;
+    left: auto;
+    transform: none;
   }
 }
 

@@ -7,7 +7,6 @@
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          <li class="masthead__menu-item masthead__menu-item--theme">{% include theme-toggle.html %}</li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
@@ -20,7 +19,8 @@
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
-    <div class="masthead__clock">
+    <div class="masthead__toolbar">
+      {% include theme-toggle.html %}
       {% include ac-time.html %}
     </div>
   </div>
