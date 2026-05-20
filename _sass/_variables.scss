@@ -28,8 +28,8 @@ $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
+$global-font-family         : "Nunito", "LXGW WenKai", "Noto Sans SC", $sans-serif;
+$header-font-family         : "Nunito", "LXGW WenKai", "Noto Sans SC", $sans-serif;
 $caption-font-family        : $serif;
 
 /* type scale */
@@ -53,18 +53,18 @@ $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : mix(#fff, $gray, 90%);
 
-$body-color                 : #fff;
-$background-color           : #fff;
-$code-background-color      : #fafafa;
-$code-background-color-dark : $light-gray;
-$text-color                 : $dark-gray;
-$border-color               : $lighter-gray;
+$body-color                 : #f7f3e7;
+$background-color           : #f7f3e7;
+$code-background-color      : #2b2118;
+$code-background-color-dark : #242c46;
+$text-color                 : #877358;
+$border-color               : #ddd6c0;
 
-$primary-color              : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-$danger-color               : #ee5f5b;
-$info-color                 : #52adc8;
+$primary-color              : #2abaaa;
+$success-color              : #8ac68a;
+$warning-color              : #f7cd67;
+$danger-color               : #fc736d;
+$info-color                 : #2abaaa;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -146,7 +146,7 @@ $susy: (
    Other
    ========================================================================== */
 
-$border-radius              : 4px;
+$border-radius              : 14px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $navicon-width              : 28px;
 $navicon-height             : 4px;

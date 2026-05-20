@@ -19,7 +19,7 @@ My research interests and skills are concentrated in the fields of ml, nlp, llms
 The website is still under construction. Codes and course notes are uploading quickly.
 
 <h2>Pageviews</h2>
-<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=i24vem627Blo3jzQMlPAYUqZu3_k6Q3E7RNVyXkMYug&cl=ffffff&w=a"></script>
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=i24vem627Blo3jzQMlPAYUqZu3_k6Q3E7RNVyXkMYug&cl=f7f3e7&w=a"></script>
 <h2>Contact me</h2>
 
 

@@ -9,41 +9,9 @@ redirect_from:
 
 {% include base_path %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中文页面</title>
-    <style>
-        .btn {
-            background-color: #ddd; 
-            border: none;
-            color: black;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .btn:hover {
-            background-color: #ccc; 
-            transform: scale(1.1);  /* 放大效果 */
-        }
-        .btn:active {
-            background-color: #bbb; /* 点击时变更颜色 */
-            transform: scale(1.05); /* 按钮按下时稍微缩小 */
-        }
-    </style>
-</head>
-<body>
-    <br/><br/>
-    <div class="container">
-<button class="btn" onclick="window.location.href='/cv'">Switch to English</button>
-    </div>
-    <br/><br/>
-</body>
+<div class="cv-lang-switch">
+  <button class="btn btn--info" type="button" onclick="window.location.href='/cv'">Switch to English</button>
+</div>
 
 * 姓名: 于汉清
 * 电话及微信: 13051172066 / 邮箱 [2501211863@stu.pku.edu.cn](2501211863@stu.pku.edu.cn)

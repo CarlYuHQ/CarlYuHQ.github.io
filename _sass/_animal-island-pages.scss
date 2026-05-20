@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Page-specific styles (extracted from inline <style> blocks)
+   ========================================================================== */
+
+/* CV language switch */
+.cv-lang-switch {
+  margin: 1.5rem 0;
+}
+
+/* Friend links (Links page) */
+.friend-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.friend-card {
+  background-color: var(--ac-surface);
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-md);
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: var(--ac-shadow);
+  cursor: pointer;
+  transition: var(--ac-transition);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ac-shadow-hover);
+    border-color: var(--ac-primary);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.friend-card .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--ac-radius-lg);
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid var(--ac-wood);
+}
+
+.friend-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ac-text-dark);
+}
+
+.friend-intro {
+  font-size: 14px;
+  color: var(--ac-text-light);
+}
+
+/* Notes timeline */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-container::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: var(--ac-primary);
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  border-radius: var(--ac-radius-full);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 60px;
+}
+
+.timeline-node {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: var(--ac-surface);
+  border: 3px solid var(--ac-primary);
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: var(--ac-shadow);
+}
+
+.timeline-item .content {
+  position: relative;
+  background: var(--ac-surface);
+  padding: 20px;
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-md);
+  box-shadow: var(--ac-shadow);
+  color: var(--ac-text);
+}
+
+.timeline-item .content h3 {
+  color: var(--ac-primary-dark);
+  margin-top: 0;
+}
+
+.timeline-item .time {
+  display: block;
+  color: var(--ac-text-light);
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .timeline-container::after {
+    left: 10px;
+  }
+
+  .timeline-item {
+    padding-left: 40px;
+  }
+
+  .timeline-node {
+    left: 0;
+  }
+}

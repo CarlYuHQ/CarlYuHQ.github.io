@@ -5,8 +5,19 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-base="{{ base_path }}/">
   <head>
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (!t) {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "night"
+            : "nord";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
