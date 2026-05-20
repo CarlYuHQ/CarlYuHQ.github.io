@@ -5,7 +5,7 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-base="{{ base_path }}/">
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-base="{% if site.baseurl %}{{ site.baseurl }}/{% else %}/{% endif %}">
   <head>
     <script>
       (function () {
