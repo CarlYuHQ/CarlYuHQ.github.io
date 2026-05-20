@@ -9,6 +9,8 @@ redirect_from:
 ---
 
 <div class="ac-typewriter-wrap" aria-live="polite">
+  <p class="ac-typewriter" data-ac-typewriter data-ac-text="As a master's student at the Department of Information Management, Peking University, I am currently part of the Win-Bin Huang, BuYi and MengFan's research group." data-ac-speed="38"></p>
+  <p class="ac-typewriter" data-ac-typewriter data-ac-text="My research interests and skills are concentrated in the fields of ml, nlp, llms, etc." data-ac-speed="38"></p>
   <p class="ac-typewriter" data-ac-typewriter data-ac-text="The website is still under construction. Codes and course notes are uploading quickly." data-ac-speed="42"></p>
 </div>
 
