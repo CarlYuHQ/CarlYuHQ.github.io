@@ -15,11 +15,7 @@
   padding-right: 0.5rem;
   box-sizing: border-box;
 
-  > button {
-    display: none !important;
-  }
-
-  .hidden-links {
+  > button.hidden {
     display: none !important;
   }
 

@@ -115,11 +115,7 @@ a {
     }
   }
 
-  > button {
-    display: none !important;
-  }
-
-  .hidden-links {
+  > button.hidden {
     display: none !important;
   }
 }
