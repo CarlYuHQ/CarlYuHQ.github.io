@@ -9,7 +9,6 @@ redirect_from:
 ---
 
 <div class="ac-typewriter-wrap" aria-live="polite">
-  <p class="ac-typewriter" data-ac-typewriter data-ac-text="你好，我是于汉清，欢迎来访问。" data-ac-speed="75"></p>
   <p class="ac-typewriter" data-ac-typewriter data-ac-text="Hello, I'm Hanqing Yu. Welcome to my site." data-ac-speed="42"></p>
 </div>
 

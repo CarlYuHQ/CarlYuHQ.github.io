@@ -13,6 +13,7 @@
   function applyTheme(theme) {
     var t = theme === "night" ? "night" : "nord";
     document.documentElement.setAttribute("data-theme", t);
+    document.body.classList.toggle("ac-theme-night", t === "night");
     localStorage.setItem("theme", t);
 
     var meta = document.querySelector('meta[name="theme-color"]');

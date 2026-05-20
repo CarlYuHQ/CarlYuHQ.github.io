@@ -13,10 +13,16 @@
   width: 100%;
   max-width: 100%;
   padding-right: 0.5rem;
+  box-sizing: border-box;
 
   button:not(.hidden) {
-    right: 11.5rem;
+    right: 11.5rem !important;
     z-index: 35;
+  }
+
+  .visible-links {
+    display: table !important;
+    max-width: 100%;
   }
 }
 

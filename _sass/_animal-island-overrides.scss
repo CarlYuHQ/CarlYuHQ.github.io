@@ -11,6 +11,30 @@ body {
   font-weight: 500;
   color: var(--ac-text) !important;
   background-color: var(--ac-bg) !important;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html[data-theme="night"] {
+  .masthead,
+  .page__footer,
+  .author__content,
+  .author__urls,
+  .archive__item,
+  .list__item,
+  .well,
+  .toc,
+  .ac-typewriter-wrap {
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .greedy-nav .hidden-links {
+    background: var(--ac-surface) !important;
+    border-color: var(--ac-border) !important;
+  }
+
+  .greedy-nav .hidden-links a:hover {
+    background: var(--ac-surface-hover) !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,6 +67,20 @@ a {
   border-bottom: 3px solid var(--ac-border);
   border-radius: 0 0 var(--ac-radius-lg) var(--ac-radius-lg);
   box-shadow: var(--ac-shadow);
+}
+
+.masthead__inner-wrap--split {
+  position: relative !important;
+  padding-right: 11.5rem !important;
+}
+
+.masthead__clock {
+  position: absolute !important;
+  top: 50% !important;
+  right: 0.75rem !important;
+  left: auto !important;
+  z-index: 30;
+  transform: translateY(-50%);
 }
 
 .masthead__menu-item a {
