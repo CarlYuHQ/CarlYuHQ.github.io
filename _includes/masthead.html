@@ -1,7 +1,7 @@
 {% include base_path %}
 
 <div class="masthead">
-  <div class="masthead__inner-wrap">
+  <div class="masthead__inner-wrap masthead__inner-wrap--split">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
@@ -16,10 +16,12 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           <li class="masthead__menu-item">{% include theme-toggle.html %}</li>
-          <li class="masthead__menu-item masthead__menu-item--clock">{% include ac-time.html %}</li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
+    </div>
+    <div class="masthead__clock">
+      {% include ac-time.html %}
     </div>
   </div>
 </div>

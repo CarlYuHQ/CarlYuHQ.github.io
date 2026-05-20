@@ -1,23 +1,20 @@
-/* --- Masthead: clock pinned to far right (animal-island-ui Time) --- */
-.greedy-nav .visible-links {
-  display: flex !important;
-  flex-wrap: wrap;
+/* --- Masthead: nav + clock split (clock outside greedy-nav) --- */
+.masthead__inner-wrap--split {
+  display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
 }
 
-.masthead__menu-item--clock {
-  margin-left: auto !important;
-  padding-left: 0.5rem;
+.masthead__menu {
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
-  a {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  &::before {
-    display: none !important;
-  }
+.masthead__clock {
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .ac-datetime {
@@ -101,12 +98,12 @@
 }
 
 @media (max-width: 768px) {
-  .masthead__menu-item--clock {
-    margin-left: 0 !important;
+  .masthead__clock {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 0.35rem;
+    margin-left: 0;
+    order: 3;
   }
 
   .ac-datetime {
