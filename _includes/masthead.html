@@ -16,12 +16,10 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           <li class="masthead__menu-item">{% include theme-toggle.html %}</li>
+          <li class="masthead__menu-item masthead__menu-item--clock">{% include ac-time.html %}</li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
-    </div>
-    <div class="masthead__extras" aria-hidden="false">
-      {% include ac-time.html %}
     </div>
   </div>
 </div>

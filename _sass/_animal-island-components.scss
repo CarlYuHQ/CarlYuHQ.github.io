@@ -1,74 +1,85 @@
-/* --- Masthead + time widget --- */
-.masthead__inner-wrap {
-  display: flex;
+/* --- Masthead: clock pinned to far right (animal-island-ui Time) --- */
+.greedy-nav .visible-links {
+  display: flex !important;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
+  width: 100%;
 }
 
-.masthead__menu {
-  flex: 1 1 auto;
-  min-width: 0;
-}
+.masthead__menu-item--clock {
+  margin-left: auto !important;
+  padding-left: 0.5rem;
 
-.masthead__extras {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0.25rem 0.5rem 0.5rem;
+  a {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  &::before {
+    display: none !important;
+  }
 }
 
 .ac-datetime {
   display: inline-flex;
-  gap: 12px;
+  gap: 20px;
   align-items: center;
-  padding: 8px 18px;
-  background: linear-gradient(180deg, var(--ac-surface) 0%, var(--ac-surface-hover) 100%);
-  border: 3px solid var(--ac-border);
-  border-radius: var(--ac-radius-md);
+  padding: 16px 36px;
+  background: linear-gradient(180deg, #fff 0%, #f8f8f0 100%);
+  border: 3px solid #d4cfc3;
+  border-radius: 18px;
   box-shadow: var(--ac-shadow);
   animation: ac-fade-up 0.5s ease-out;
+  white-space: nowrap;
+  font-family: var(--ac-font);
+}
+
+[data-theme="night"] .ac-datetime {
+  background: linear-gradient(180deg, var(--ac-surface) 0%, var(--ac-surface-hover) 100%);
+  border-color: var(--ac-border);
 }
 
 .ac-date {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 14px;
+  padding-right: 24px;
   border-right: 3px solid rgba(159, 146, 125, 0.35);
 }
 
 .ac-weekday {
-  color: var(--ac-green);
+  color: #6fba2c;
   font-weight: 900;
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .ac-monthday {
-  color: var(--ac-text-dark);
+  color: #8b7355;
   font-weight: 800;
-  font-size: 16px;
-  line-height: 1.1;
+  font-size: 22px;
+  line-height: 1.15;
 }
 
 .ac-time {
   display: flex;
   align-items: center;
-  color: var(--ac-text-dark);
+  color: #8b7355;
   font-weight: 900;
-  font-size: 28px;
-  letter-spacing: 1px;
+  font-size: 48px;
+  letter-spacing: 2px;
   font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 
 .ac-colon {
   position: relative;
-  top: -0.06em;
+  top: -0.08em;
   margin: 0 1px;
+  font-size: 48px;
+  color: #8b7355;
   animation: ac-time-blink 1s step-end infinite;
 }
 
@@ -90,23 +101,34 @@
 }
 
 @media (max-width: 768px) {
-  .masthead__extras {
+  .masthead__menu-item--clock {
+    margin-left: 0 !important;
     width: 100%;
+    display: flex;
     justify-content: center;
-    order: 3;
+    margin-top: 0.35rem;
   }
 
   .ac-datetime {
-    padding: 6px 14px;
-    gap: 8px;
+    padding: 12px 20px;
+    gap: 12px;
   }
 
   .ac-date {
-    padding-right: 10px;
+    padding-right: 12px;
   }
 
-  .ac-time {
-    font-size: 22px;
+  .ac-weekday {
+    font-size: 11px;
+  }
+
+  .ac-monthday {
+    font-size: 16px;
+  }
+
+  .ac-time,
+  .ac-colon {
+    font-size: 32px;
   }
 }
 
@@ -153,35 +175,18 @@
   }
 }
 
-/* --- Blogs loading overlay (radial reveal) --- */
-@property --ac-mask-r {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
+body.ac-blogs-loading-active {
+  overflow: hidden;
 }
 
+/* --- Blogs loading (animal-island-ui radial reveal) --- */
 .ac-loading-overlay {
   position: fixed;
   inset: 0;
-  z-index: 300;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 20px;
-  background: #1a1a1a;
-  overflow: hidden;
-  --ac-mask-r: 0px;
+  z-index: 9999;
+  background: #000;
   cursor: pointer;
-  -webkit-mask-image: radial-gradient(
-    circle at 50% 50%,
-    transparent var(--ac-mask-r),
-    black calc(var(--ac-mask-r) + 1px)
-  );
-  mask-image: radial-gradient(
-    circle at 50% 50%,
-    transparent var(--ac-mask-r),
-    black calc(var(--ac-mask-r) + 1px)
-  );
+  overflow: hidden;
 }
 
 .ac-loading-overlay.is-closing {
@@ -192,24 +197,40 @@
   display: none !important;
 }
 
-.ac-loading-hint {
+.ac-loading-panel {
   position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ac-loading-hint {
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 10000;
   margin: 0;
-  padding: 0.65rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   color: #fff;
-  font-size: 1rem;
+  font-family: var(--ac-font);
+  font-size: 1.05rem;
   font-weight: 700;
   text-align: center;
-  background: rgba(42, 186, 170, 0.85);
+  background: rgba(42, 186, 170, 0.92);
   border: 3px solid var(--ac-primary-dark);
   border-radius: var(--ac-radius-full);
   box-shadow: 0 4px 0 var(--ac-primary-dark);
+  transform: translate(-50%, -50%);
   animation: ac-hint-pulse 1.4s ease-in-out infinite;
   pointer-events: none;
+}
+
+.ac-loading-overlay.is-closing .ac-loading-hint {
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 @keyframes ac-hint-pulse {
@@ -218,26 +239,26 @@
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.04);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
 
-.ac-loading-art {
-  max-width: 160px;
-  max-height: 160px;
-  width: 28vw;
-  object-fit: contain;
-  animation: ac-leaf-float 2s ease-in-out infinite;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+.ac-loading-island {
+  max-height: 200px;
+  max-width: 180px;
+  width: min(40vw, 180px);
+  height: auto;
+  animation: ac-island-bob 2s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
 }
 
-@keyframes ac-leaf-float {
+@keyframes ac-island-bob {
   0%,
   100% {
-    transform: translateY(0) rotate(-3deg);
+    transform: translateY(0) rotate(-1deg);
   }
   50% {
-    transform: translateY(-10px) rotate(3deg);
+    transform: translateY(-8px) rotate(1deg);
   }
 }
 

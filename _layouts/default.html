@@ -24,6 +24,9 @@ layout: compress
 
   <body class="ac-cursor-zone">
 
+    {% if page.permalink == '/Blogs/' %}
+      {% include ac-blogs-loading.html %}
+    {% endif %}
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 

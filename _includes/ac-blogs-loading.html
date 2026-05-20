@@ -4,15 +4,25 @@
   class="ac-loading-overlay"
   role="dialog"
   aria-modal="true"
-  aria-label="正在进入 Blogs"
+  aria-label="Loading Blogs"
   tabindex="0"
 >
-  <p class="ac-loading-hint">点击任意处进入 Blogs 🍃</p>
-  <img
-    class="ac-loading-art"
-    src="{{ base_path }}/images/ac/leaf_light.png"
-    alt=""
-    width="160"
-    height="160"
-  />
+  <div class="ac-loading-panel">
+    <p class="ac-loading-hint">点击任意处进入 Blogs</p>
+    <svg
+      class="ac-loading-island"
+      viewBox="0 0 200 160"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <ellipse cx="100" cy="130" rx="88" ry="22" fill="#4a8f6e"/>
+      <path d="M55 128 Q100 95 145 128" fill="#6fba2c"/>
+      <rect x="92" y="72" width="16" height="58" rx="4" fill="#8b5a2b"/>
+      <ellipse cx="100" cy="68" rx="52" ry="38" fill="#5cb85c"/>
+      <circle cx="72" cy="58" r="6" fill="#f7cd67"/>
+      <circle cx="128" cy="62" r="5" fill="#f7cd67"/>
+      <path d="M30 120 Q20 100 35 90 Q50 105 30 120" fill="#82d5bb" opacity="0.7"/>
+      <path d="M170 118 Q185 98 168 88 Q155 102 170 118" fill="#82d5bb" opacity="0.7"/>
+    </svg>
+  </div>
 </div>

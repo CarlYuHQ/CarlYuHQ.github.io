@@ -1,7 +1,29 @@
 (function () {
   "use strict";
 
-  var WEEKDAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  var WEEKDAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  var MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
   function pad(n) {
     return n < 10 ? "0" + n : String(n);
@@ -15,17 +37,16 @@
     var monthdayEl = root.querySelector("[data-ac-monthday]");
     var hourEl = root.querySelector("[data-ac-hour]");
     var minEl = root.querySelector("[data-ac-min]");
-    var secEl = root.querySelector("[data-ac-sec]");
 
     function tick() {
       var now = new Date();
       if (weekdayEl) weekdayEl.textContent = WEEKDAYS[now.getDay()];
       if (monthdayEl) {
-        monthdayEl.textContent = now.getMonth() + 1 + "/" + now.getDate();
+        monthdayEl.textContent =
+          MONTHS[now.getMonth()] + " " + now.getDate();
       }
       if (hourEl) hourEl.textContent = pad(now.getHours());
       if (minEl) minEl.textContent = pad(now.getMinutes());
-      if (secEl) secEl.textContent = pad(now.getSeconds());
     }
 
     tick();
@@ -36,11 +57,9 @@
     var nodes = document.querySelectorAll("[data-ac-typewriter]");
     if (!nodes.length) return;
 
-    var speedDefault = 75;
-
     function run(el, onComplete) {
       var text = el.getAttribute("data-ac-text") || el.textContent.trim();
-      var speed = parseInt(el.getAttribute("data-ac-speed") || speedDefault, 10);
+      var speed = parseInt(el.getAttribute("data-ac-speed") || "42", 10);
       var delay = parseInt(el.getAttribute("data-ac-delay") || "0", 10);
 
       el.textContent = "";
@@ -70,48 +89,104 @@
     })(0);
   }
 
-  function isBlogsPage() {
-    var path = (window.location.pathname || "").replace(/\/+$/, "");
+  function isBlogsPath(pathname) {
+    var path = (pathname || "").replace(/\/+$/, "") || "/";
     return /\/Blogs$/i.test(path) || /\/hiddenBlogs$/i.test(path);
+  }
+
+  function applyLoadingMask(overlay, radius, originX, originY) {
+    var mask =
+      "radial-gradient(circle at " +
+      originX +
+      "px " +
+      originY +
+      "px, transparent " +
+      radius +
+      "px, black " +
+      (radius + 1) +
+      "px)";
+    overlay.style.webkitMaskImage = mask;
+    overlay.style.maskImage = mask;
   }
 
   function initBlogsLoading() {
     var overlay = document.getElementById("ac-blogs-loading");
-    if (!overlay || !isBlogsPage()) return;
-
-    var dismissed = sessionStorage.getItem("ac-blogs-loading-dismissed");
-    if (dismissed === "1") {
+    if (!overlay) return;
+    if (!isBlogsPath(window.location.pathname)) {
       overlay.classList.add("is-hidden");
       return;
     }
 
-    var container = overlay;
-    var hint = overlay.querySelector(".ac-loading-hint");
+    document.body.classList.add("ac-blogs-loading-active");
+
+    var originX = 0;
+    var originY = 0;
+
+    function updateOrigin() {
+      var rect = overlay.getBoundingClientRect();
+      originX = rect.width * 0.88;
+      originY = rect.height * 0.88;
+      applyLoadingMask(overlay, 0, originX, originY);
+    }
+
+    updateOrigin();
+    window.addEventListener("resize", updateOrigin);
+
+    var closing = false;
 
     function dismiss() {
-      if (container.classList.contains("is-closing")) return;
-      if (hint) hint.style.opacity = "0";
+      if (closing || overlay.classList.contains("is-hidden")) return;
+      closing = true;
+      overlay.classList.add("is-closing");
 
-      var rect = container.getBoundingClientRect();
-      var finalR = Math.ceil(Math.hypot(rect.width, rect.height) / 2) + 50;
-      var duration = Math.max(0.35, finalR / 1200);
+      var rect = overlay.getBoundingClientRect();
+      originX = rect.width * 0.88;
+      originY = rect.height * 0.88;
+      var finalR = Math.ceil(Math.hypot(rect.width, rect.height) / 2) + 80;
+      var duration = Math.max(0.6, finalR / 900);
+      var start = performance.now();
 
-      container.classList.add("is-closing");
-      container.style.transition = "--ac-mask-r " + duration + "s linear";
-      container.style.setProperty("--ac-mask-r", "0px");
-      void container.offsetHeight;
-      container.style.setProperty("--ac-mask-r", finalR + "px");
+      function frame(now) {
+        var t = Math.min(1, (now - start) / (duration * 1000));
+        var r = t * finalR;
+        applyLoadingMask(overlay, r, originX, originY);
+        if (t < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          overlay.classList.add("is-hidden");
+          document.body.classList.remove("ac-blogs-loading-active");
+        }
+      }
 
-      setTimeout(function () {
-        container.classList.add("is-hidden");
-        sessionStorage.setItem("ac-blogs-loading-dismissed", "1");
-      }, duration * 1000 + 80);
+      requestAnimationFrame(frame);
     }
 
     overlay.addEventListener("click", dismiss);
     overlay.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") dismiss();
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        dismiss();
+      }
     });
+  }
+
+  function markBlogsLinks() {
+    document.addEventListener(
+      "click",
+      function (e) {
+        var link = e.target.closest && e.target.closest("a[href]");
+        if (!link) return;
+        try {
+          var url = new URL(link.href, window.location.origin);
+          if (isBlogsPath(url.pathname)) {
+            sessionStorage.removeItem("ac-blogs-loading-dismissed");
+          }
+        } catch (err) {
+          /* ignore malformed href */
+        }
+      },
+      true
+    );
   }
 
   function onReady(fn) {
@@ -125,6 +200,7 @@
   onReady(function () {
     initTime();
     initTypewriters();
+    markBlogsLinks();
     initBlogsLoading();
   });
 })();

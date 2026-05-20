@@ -9,8 +9,7 @@ redirect_from:
 ---
 
 <div class="ac-typewriter-wrap" aria-live="polite">
-  <p class="ac-typewriter" data-ac-typewriter data-ac-text="你好！欢迎登岛～ 我是于汉清，北京大学信息管理系硕士研究生。" data-ac-speed="75"></p>
-  <p class="ac-typewriter" data-ac-typewriter data-ac-text="站点仍在建设中，代码与课程笔记会持续更新。" data-ac-speed="70"></p>
+  <p class="ac-typewriter" data-ac-typewriter data-ac-text="The website is still under construction. Codes and course notes are uploading quickly." data-ac-speed="42"></p>
 </div>
 
 As a master's student at  [Department of Information Management](https://www.im.pku.edu.cn/), [Peking University](https://www.pku.edu.cn/),  I am currently part of the [Win-Bin Huang](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/hwb/index.htm) [BuYi](https://im.pku.edu.cn/szll/xxzzyxxsjyjs/by/) and [MengFan](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/mf/index.htm)'s research group.  
