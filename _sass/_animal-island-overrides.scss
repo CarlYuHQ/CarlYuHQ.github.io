@@ -115,17 +115,13 @@ a {
     }
   }
 
-  .hidden-links {
-    background: var(--ac-surface);
-    border: 2px solid var(--ac-border);
-    border-radius: var(--ac-radius-md);
-    box-shadow: var(--ac-shadow-hover);
+  > button {
+    display: none !important;
   }
-}
 
-.greedy-nav__toggle {
-  background-color: var(--ac-primary);
-  border-radius: var(--ac-radius-sm);
+  .hidden-links {
+    display: none !important;
+  }
 }
 
 /* Theme toggle in masthead */

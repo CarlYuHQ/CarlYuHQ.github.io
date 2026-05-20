@@ -15,9 +15,12 @@
   padding-right: 0.5rem;
   box-sizing: border-box;
 
-  button:not(.hidden) {
-    right: 17rem !important;
-    z-index: 35;
+  > button {
+    display: none !important;
+  }
+
+  .hidden-links {
+    display: none !important;
   }
 
   .visible-links {
