@@ -230,28 +230,91 @@ select {
   border-radius: var(--ac-radius-md);
   padding: 0.75em 1em;
   box-shadow: var(--ac-shadow);
+  margin-bottom: 0.75rem;
 }
 
 .author__name {
   color: var(--ac-text-dark);
+  margin: 0;
 }
 
 .author__bio {
   color: var(--ac-text-light);
+  margin: 0.25em 0 0;
 }
 
-.author__urls {
-  background: var(--ac-surface);
-  border: 2px solid var(--ac-border);
-  border-radius: var(--ac-radius-md);
-  box-shadow: var(--ac-shadow-hover);
+.author__urls-wrapper {
+  display: block;
+  width: 100%;
+  cursor: default;
+}
 
-  a {
-    color: var(--ac-text);
+.author__urls-wrapper .btn--inverse {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.author__urls,
+.author__urls.social-icons {
+  display: block !important;
+  position: relative !important;
+  right: auto !important;
+  z-index: 1 !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0.5rem 0.75rem !important;
+  list-style: none !important;
+  background: var(--ac-surface) !important;
+  border: 2px solid var(--ac-border) !important;
+  border-radius: var(--ac-radius-md) !important;
+  box-shadow: var(--ac-shadow) !important;
+  cursor: default;
+
+  &:before,
+  &:after {
+    display: none !important;
+  }
+
+  li {
+    margin: 0.35rem 0;
+    padding: 0.4rem 0.55rem;
+    border-radius: var(--ac-radius-sm);
+    transition: var(--ac-transition);
+    white-space: normal;
+    line-height: 1.4;
 
     &:hover {
-      color: var(--ac-primary);
+      background: var(--ac-surface-hover);
     }
+
+    i.fa,
+    i.fas,
+    i.fab {
+      color: var(--ac-primary);
+      min-width: 1.25em;
+      margin-right: 0.45em;
+      text-align: center;
+    }
+
+    a {
+      color: var(--ac-text-dark);
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        color: var(--ac-primary);
+      }
+    }
+  }
+}
+
+@include breakpoint($large) {
+  .author__urls-wrapper .btn--inverse {
+    display: none;
+  }
+
+  .author__urls {
+    display: block !important;
   }
 }
 
@@ -384,24 +447,37 @@ code {
   opacity: 0.85;
 }
 
-/* --- Banners --- */
+/* --- Banners (full image visible, no crop) --- */
+.ac-banner-wrap {
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem;
+  background: var(--ac-surface);
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-lg);
+  box-shadow: var(--ac-shadow);
+  line-height: 0;
+  overflow: hidden;
+}
+
+.ac-banner-wrap--footer {
+  margin: 1.5rem 0 0;
+}
+
 .ac-banner {
   display: block;
   width: 100%;
-  max-height: 180px;
-  object-fit: cover;
-  border-radius: var(--ac-radius-lg);
-  margin: 0 0 1.25rem;
-  box-shadow: var(--ac-shadow);
-
-  @include breakpoint($small) {
-    max-height: 120px;
-  }
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center bottom;
+  border-radius: var(--ac-radius-md);
+  margin: 0;
+  box-shadow: none;
 }
 
 .ac-banner--footer {
-  margin: 1.5rem 0 0;
-  max-height: 140px;
+  max-width: 100%;
 }
 
 /* --- Tables --- */
@@ -455,13 +531,10 @@ table {
   }
 }
 
-/* --- Custom cursor (avoid % in SCSS strings for libsass) --- */
+/* --- Custom cursor (animal-island-ui finger icon) --- */
 @media (pointer: fine) {
-  body,
-  a,
-  button,
-  .btn,
-  label {
-    cursor: pointer;
+  .ac-cursor-zone,
+  .ac-cursor-zone * {
+    cursor: url("../../images/ac/cursor-icon.png") 4 0, auto !important;
   }
 }
