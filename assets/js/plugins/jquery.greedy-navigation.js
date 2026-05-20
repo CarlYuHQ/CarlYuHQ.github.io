@@ -14,15 +14,23 @@ var breaks = [];
 
 function updateNav() {
 
-  var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
+  var clockReserve = 0;
+  var $clock = $(".masthead__clock");
+  if ($clock.length) {
+    clockReserve = $clock.outerWidth(true) + 20;
+  }
+
+  var availableSpace = $btn.hasClass('hidden')
+    ? $nav.width() - clockReserve
+    : $nav.width() - $btn.width() - 30 - clockReserve;
 
   // The visible list is overflowing the nav
-  if($vlinks.width() > availableSpace) {
+  if($vlinks.width() > availableSpace && $vlinks.children().length > 1) {
 
     // Record the width of the list
     breaks.push($vlinks.width());
 
-    // Move item to the hidden list
+    // Move item to the hidden list (skip site title)
     $vlinks.children().last().prependTo($hlinks);
 
     // Show the dropdown btn

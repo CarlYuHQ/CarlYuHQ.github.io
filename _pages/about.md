@@ -9,9 +9,8 @@ redirect_from:
 ---
 
 <div class="ac-typewriter-wrap" aria-live="polite">
-  <p class="ac-typewriter" data-ac-typewriter data-ac-text="As a master's student at the Department of Information Management, Peking University, I am currently part of the Win-Bin Huang, BuYi and MengFan's research group." data-ac-speed="38"></p>
-  <p class="ac-typewriter" data-ac-typewriter data-ac-text="My research interests and skills are concentrated in the fields of ml, nlp, llms, etc." data-ac-speed="38"></p>
-  <p class="ac-typewriter" data-ac-typewriter data-ac-text="The website is still under construction. Codes and course notes are uploading quickly." data-ac-speed="42"></p>
+  <p class="ac-typewriter" data-ac-typewriter data-ac-text="你好，我是于汉清，欢迎来访问。" data-ac-speed="75"></p>
+  <p class="ac-typewriter" data-ac-typewriter data-ac-text="Hello, I'm Hanqing Yu. Welcome to my site." data-ac-speed="42"></p>
 </div>
 
 As a master's student at  [Department of Information Management](https://www.im.pku.edu.cn/), [Peking University](https://www.pku.edu.cn/),  I am currently part of the [Win-Bin Huang](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/hwb/index.htm) [BuYi](https://im.pku.edu.cn/szll/xxzzyxxsjyjs/by/) and [MengFan](https://www.im.pku.edu.cn/szll/xxzzyxxsjyjs/mf/index.htm)'s research group.  
@@ -21,6 +20,8 @@ My research interests and skills are concentrated in the fields of ml, nlp, llms
 <!--I am very fortunate to be advised by [Prof. XXX](https://www.XXX.com/) of XXX Lab from [School of Computer Science](https://cs.pku.edu.cn/), Peking University. I was advised by [Prof. XX](https://XXX.pku.edu.cn/) from [School of Computer Science](https://cs.pku.edu.cn/), Peking University.-->
 
 <!--You can find my CV here: [Curriculum Vitae](../assets/Curriculum_Vitae.pdf).-->
+
+The website is still under construction. Codes and course notes are uploading quickly.
 
 <h2>Pageviews</h2>
 <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=i24vem627Blo3jzQMlPAYUqZu3_k6Q3E7RNVyXkMYug&cl=f7f3e7&w=a"></script>

@@ -1,20 +1,36 @@
-/* --- Masthead: nav + clock split (clock outside greedy-nav) --- */
+/* --- Masthead: nav full width + clock pinned top-right --- */
 .masthead__inner-wrap--split {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1rem;
-  flex-wrap: wrap;
+  position: relative;
+  padding-right: 11.5rem;
 }
 
 .masthead__menu {
-  flex: 1 1 auto;
-  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.masthead__menu .greedy-nav {
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0.5rem;
+
+  button:not(.hidden) {
+    right: 11.5rem;
+    z-index: 35;
+  }
 }
 
 .masthead__clock {
-  flex: 0 0 auto;
-  margin-left: auto;
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  z-index: 30;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  .ac-datetime {
+    pointer-events: auto;
+  }
 }
 
 .ac-datetime {
@@ -29,6 +45,33 @@
   animation: ac-fade-up 0.5s ease-out;
   white-space: nowrap;
   font-family: var(--ac-font);
+}
+
+/* Compact clock for masthead (nav must stay visible) */
+.ac-datetime--compact {
+  gap: 10px;
+  padding: 6px 12px;
+  border-width: 2px;
+  border-radius: 12px;
+
+  .ac-date {
+    padding-right: 10px;
+  }
+
+  .ac-weekday {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .ac-monthday {
+    font-size: 13px;
+  }
+
+  .ac-time,
+  .ac-colon {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
 }
 
 [data-theme="night"] .ac-datetime {
@@ -97,35 +140,23 @@
   }
 }
 
+@media (max-width: 900px) {
+  .masthead__inner-wrap--split {
+    padding-right: 9.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .masthead__inner-wrap--split {
+    padding-right: 0;
+    padding-bottom: 3.25rem;
+  }
+
   .masthead__clock {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-left: 0;
-    order: 3;
-  }
-
-  .ac-datetime {
-    padding: 12px 20px;
-    gap: 12px;
-  }
-
-  .ac-date {
-    padding-right: 12px;
-  }
-
-  .ac-weekday {
-    font-size: 11px;
-  }
-
-  .ac-monthday {
-    font-size: 16px;
-  }
-
-  .ac-time,
-  .ac-colon {
-    font-size: 32px;
+    top: auto;
+    bottom: 0.35rem;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 
