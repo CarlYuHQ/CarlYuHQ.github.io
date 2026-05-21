@@ -190,7 +190,7 @@
   }
 
   function initPageBanners() {
-    document.querySelectorAll(".theme-banner").forEach(function (img) {
+    document.querySelectorAll(".theme-ribbon, .theme-banner").forEach(function (img) {
       if (!img.getAttribute("src") && img.getAttribute("data-light-src")) {
         img.src = img.getAttribute("data-light-src");
       }

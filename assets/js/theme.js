@@ -22,7 +22,7 @@
     }
 
     var base = getBasePath();
-    document.querySelectorAll(".theme-banner").forEach(function (el) {
+    document.querySelectorAll(".theme-ribbon, .theme-banner").forEach(function (el) {
       var light = el.getAttribute("data-light-src");
       var dark = el.getAttribute("data-dark-src");
       if (light && dark) {

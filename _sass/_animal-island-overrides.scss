@@ -535,12 +535,16 @@ code {
 }
 
 /* archive 主题自带 a:hover img，会误伤横幅 */
+.archive a:hover .ac-ribbon,
+.archive .ac-ribbon-wrap a:hover img,
+.archive .ac-ribbon-wrap:hover .ac-ribbon,
 .archive a:hover .ac-banner,
 .archive .ac-banner-wrap a:hover img,
 .archive .ac-banner-wrap:hover .ac-banner {
   box-shadow: none !important;
 }
 
+.ac-ribbon-wrap,
 .ac-banner-wrap {
   box-sizing: border-box;
   display: block;
@@ -556,20 +560,26 @@ code {
   line-height: 0;
 }
 
+.ac-ribbon-wrap--header,
 .ac-banner-wrap--header {
   margin-bottom: 1rem;
 }
 
+.ac-ribbon-wrap--footer,
 .ac-banner-wrap--footer {
   margin: 1.5rem 0 0;
   padding: 0.5rem 0.75rem 0.35rem;
 }
 
+.page__content > .ac-ribbon-wrap:first-child,
+.ac-archive-content > .ac-ribbon-wrap--header:first-child,
 .page__content > .ac-banner-wrap:first-child,
 .ac-archive-content > .ac-banner-wrap--header:first-child {
   margin-top: 0;
 }
 
+.ac-ribbon-wrap .ac-ribbon,
+.ac-ribbon-wrap img.ac-ribbon,
 .ac-banner-wrap .ac-banner,
 .ac-banner-wrap img.ac-banner {
   display: block;
@@ -591,11 +601,14 @@ code {
   transform: none !important;
 }
 
+.ac-ribbon-wrap--header .ac-ribbon,
 .ac-banner-wrap--header .ac-banner {
   min-height: var(--ac-banner-header-min-h);
   aspect-ratio: var(--ac-banner-header-ratio);
 }
 
+.ac-ribbon-wrap--footer .ac-ribbon,
+.ac-ribbon-wrap--footer img.ac-ribbon,
 .ac-banner-wrap--footer .ac-banner,
 .ac-banner-wrap--footer img.ac-banner {
   min-height: var(--ac-banner-footer-min-h);
@@ -695,6 +708,7 @@ table {
 /* --- Print tweaks --- */
 @media print {
   .ac-theme-toggle,
+  .ac-ribbon,
   .ac-banner,
   .ac-back-to-top {
     display: none !important;
