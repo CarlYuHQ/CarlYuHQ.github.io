@@ -49,9 +49,9 @@
   --ac-code-bg: #2b2118;
   --ac-code-border: #3d3028;
 
-  /* banner: 2400×122 header, 2400×327 footer */
-  --ac-banner-header-ratio: 122 / 2400;
-  --ac-banner-footer-ratio: 327 / 2400;
+  /* banner: 2400×122 header, 2400×327 footer（aspect-ratio = 宽/高） */
+  --ac-banner-header-ratio: 2400 / 122;
+  --ac-banner-footer-ratio: 2400 / 327;
   --ac-banner-header-pad: 5.0833%;
   --ac-banner-footer-pad: 13.625%;
   --ac-banner-header-min-h: 40px;

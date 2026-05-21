@@ -521,11 +521,24 @@ code {
   color: var(--ac-text-light);
 }
 
-/* --- Banners: stable 25%–200% browser zoom (ratio + min-height floor) --- */
+/* --- Banners: 首页(.page__content)与子页统一用 img 自然高度，避免绝对定位在缩放时消失 --- */
 .page__content,
 .archive,
-.page__inner-wrap {
+.page__inner-wrap,
+.ac-archive-content {
   overflow: visible;
+}
+
+.ac-archive-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* archive 主题自带 a:hover img，会误伤横幅 */
+.archive a:hover .ac-banner,
+.archive .ac-banner-wrap a:hover img,
+.archive .ac-banner-wrap:hover .ac-banner {
+  box-shadow: none !important;
 }
 
 .ac-banner-wrap {
@@ -540,8 +553,7 @@ code {
   border-radius: var(--ac-radius-lg);
   box-shadow: var(--ac-shadow);
   overflow: visible;
-  container-type: inline-size;
-  container-name: ac-banner;
+  line-height: 0;
 }
 
 .ac-banner-wrap--header {
@@ -553,68 +565,22 @@ code {
   padding: 0.5rem 0.75rem 0.35rem;
 }
 
-/* padding-bottom 百分比：相对宽度算高，各档缩放最稳；min-height 防止高度塌成 0 */
-.ac-banner-frame {
+.page__content > .ac-banner-wrap:first-child,
+.ac-archive-content > .ac-banner-wrap--header:first-child {
+  margin-top: 0;
+}
+
+.ac-banner-wrap .ac-banner,
+.ac-banner-wrap img.ac-banner {
+  display: block;
   position: relative;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  line-height: 0;
-  border-radius: var(--ac-radius-md);
-  background-color: var(--ac-bg);
-  overflow: hidden;
-  isolation: isolate;
-
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-  }
-}
-
-.ac-banner-frame--header {
-  min-height: var(--ac-banner-header-min-h);
-
-  &::before {
-    padding-bottom: var(--ac-banner-header-pad);
-  }
-}
-
-.ac-banner-frame--footer {
-  min-height: var(--ac-banner-footer-min-h);
-
-  &::before {
-    padding-bottom: var(--ac-banner-footer-pad);
-  }
-}
-
-@supports (width: 1cqw) {
-  .ac-banner-frame--header {
-    min-height: max(var(--ac-banner-header-min-h), 5.0833cqw);
-  }
-
-  .ac-banner-frame--footer {
-    min-height: max(var(--ac-banner-footer-min-h), 13.625cqw);
-  }
-}
-
-.ac-banner-frame .ac-banner,
-.ac-banner-wrap img.ac-banner {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
+  height: auto;
   max-width: 100%;
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--ac-radius-md);
   box-shadow: none;
   object-fit: contain;
   object-position: center bottom;
@@ -623,7 +589,17 @@ code {
   transition: none !important;
   -webkit-transition: none !important;
   transform: none !important;
-  will-change: auto;
+}
+
+.ac-banner-wrap--header .ac-banner {
+  min-height: var(--ac-banner-header-min-h);
+  aspect-ratio: var(--ac-banner-header-ratio);
+}
+
+.ac-banner-wrap--footer .ac-banner,
+.ac-banner-wrap--footer img.ac-banner {
+  min-height: var(--ac-banner-footer-min-h);
+  aspect-ratio: var(--ac-banner-footer-ratio);
 }
 
 /* --- Back to top --- */
