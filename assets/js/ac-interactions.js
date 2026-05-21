@@ -200,6 +200,12 @@
         if (fallback) img.src = fallback;
       }
     });
+    document.querySelectorAll(".theme-banner-shell").forEach(function (el) {
+      if (!el.style.backgroundImage && el.getAttribute("data-light-src")) {
+        el.style.backgroundImage =
+          'url("' + el.getAttribute("data-light-src") + '")';
+      }
+    });
     if (typeof window.applyAcTheme === "function") {
       var theme =
         document.documentElement.getAttribute("data-theme") || "nord";

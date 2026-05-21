@@ -1,12 +1,10 @@
 {% include base_path %}
-<div class="ac-banner-wrap ac-banner-wrap--footer">
-  <img
-    class="ac-banner ac-banner--footer theme-banner"
-    src="{{ base_path }}/images/ac/banner_light.png"
-    data-light-src="{{ base_path }}/images/ac/banner_light.png"
-    data-dark-src="{{ base_path }}/images/ac/banner_dark.png"
-    alt=""
-    loading="eager"
-    decoding="async"
-  />
-</div>
+{% assign banner_ver = '3' %}
+<div
+  class="ac-banner-wrap ac-banner-wrap--footer ac-footer-banner-shell theme-banner-shell"
+  data-light-src="{{ base_path }}/images/ac/banner_light.png?v={{ banner_ver }}"
+  data-dark-src="{{ base_path }}/images/ac/banner_dark.png?v={{ banner_ver }}"
+  style="background-image: url('{{ base_path }}/images/ac/banner_light.png?v={{ banner_ver }}');"
+  role="img"
+  aria-label="页脚装饰横幅"
+></div>

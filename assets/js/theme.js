@@ -22,12 +22,21 @@
     }
 
     var base = getBasePath();
-    document.querySelectorAll(".theme-banner").forEach(function (el) {
+    function pickBannerSrc(el) {
       var light = el.getAttribute("data-light-src");
       var dark = el.getAttribute("data-dark-src");
-      if (light && dark) {
-        el.src = t === "night" ? dark : light;
-      }
+      if (!light || !dark) return null;
+      return t === "night" ? dark : light;
+    }
+
+    document.querySelectorAll(".theme-banner").forEach(function (el) {
+      var src = pickBannerSrc(el);
+      if (src) el.src = src;
+    });
+
+    document.querySelectorAll(".theme-banner-shell").forEach(function (el) {
+      var src = pickBannerSrc(el);
+      if (src) el.style.backgroundImage = 'url("' + src + '")';
     });
 
     var icon = document.getElementById("theme-icon");

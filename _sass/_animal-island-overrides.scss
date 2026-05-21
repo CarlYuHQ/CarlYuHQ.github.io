@@ -541,6 +541,20 @@ code {
   margin: 1.5rem 0 0;
 }
 
+/* Footer: background-image on cream panel (beige art blends on white and looks “blank”) */
+.ac-footer-banner-shell {
+  display: block;
+  width: 100%;
+  min-height: 72px;
+  aspect-ratio: 2400 / 327;
+  padding: 0.5rem 0.75rem 0.35rem;
+  background-color: var(--ac-bg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center bottom;
+  border-radius: var(--ac-radius-md);
+}
+
 .ac-banner {
   display: block;
   width: 100%;
@@ -548,15 +562,11 @@ code {
   max-width: 100%;
   max-height: none;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center;
   border-radius: var(--ac-radius-md);
   margin: 0;
   box-shadow: none;
   vertical-align: top;
-}
-
-.ac-banner--footer {
-  max-width: 100%;
 }
 
 /* --- Back to top --- */
@@ -653,6 +663,7 @@ table {
 @media print {
   .ac-theme-toggle,
   .ac-banner,
+  .ac-footer-banner-shell,
   .ac-back-to-top {
     display: none !important;
   }
