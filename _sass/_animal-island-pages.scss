@@ -59,6 +59,36 @@
   color: var(--ac-text-light);
 }
 
+/* Notes — 观点与本站发展 */
+.ac-site-views-details {
+  margin: 1rem 0 1.5rem;
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--ac-primary-dark);
+    padding: 0.5rem 0.75rem;
+    background: var(--ac-surface);
+    border: 2px solid var(--ac-border);
+    border-radius: var(--ac-radius-md);
+    box-shadow: var(--ac-shadow);
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      background: var(--ac-surface-hover);
+    }
+  }
+
+  &[open] summary {
+    margin-bottom: 1rem;
+    border-color: var(--ac-primary);
+  }
+}
+
 /* Notes timeline */
 .timeline-container {
   position: relative;

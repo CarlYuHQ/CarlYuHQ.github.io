@@ -516,11 +516,7 @@ code {
   color: var(--ac-text-light);
 }
 
-/* --- Banners: natural img height (no crop) ---
-   Root cause of clipping was:
-   1) height:100% + max-height on img inside aspect-ratio box
-   2) body overflow-x:hidden clipping 100vw breakout
-   Fix: width 100%, height auto only; breakout via #main padding only */
+/* --- Banners: full image visible (no aspect-ratio box — avoids empty footer) --- */
 .page__content,
 .archive,
 .page__inner-wrap {
@@ -530,32 +526,19 @@ code {
 .ac-banner-wrap {
   box-sizing: border-box;
   display: block;
-  width: calc(100% + 2em);
-  max-width: none;
-  margin-left: -1em;
-  margin-right: -1em;
-  margin-bottom: 1rem;
-  padding: 0.4rem;
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem;
   background: var(--ac-surface);
   border: 2px solid var(--ac-border);
   border-radius: var(--ac-radius-lg);
   box-shadow: var(--ac-shadow);
   line-height: 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .ac-banner-wrap--footer {
-  margin-top: 1.25rem;
-  margin-bottom: 0;
-  min-height: 4rem;
-}
-
-.ac-banner-wrap--footer .ac-banner--footer {
-  aspect-ratio: var(--ac-banner-footer-ratio);
-  width: 100%;
-  height: auto;
-  min-height: 3.5rem;
-  object-fit: contain;
+  margin: 1.5rem 0 0;
 }
 
 .ac-banner {
@@ -563,15 +546,17 @@ code {
   width: 100%;
   height: auto;
   max-width: 100%;
+  max-height: none;
+  object-fit: contain;
+  object-position: center bottom;
   border-radius: var(--ac-radius-md);
   margin: 0;
   box-shadow: none;
   vertical-align: top;
 }
 
-.ac-banner-wrap--header .ac-banner {
-  aspect-ratio: var(--ac-banner-header-ratio);
-  object-fit: contain;
+.ac-banner--footer {
+  max-width: 100%;
 }
 
 /* --- Back to top --- */
@@ -625,13 +610,6 @@ code {
   line-height: 1;
 }
 
-@include breakpoint($large) {
-  .ac-banner-wrap {
-    width: calc(100% + 4em);
-    margin-left: -2em;
-    margin-right: -2em;
-  }
-}
 
 /* --- Tables --- */
 table {
