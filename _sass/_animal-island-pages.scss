@@ -67,20 +67,30 @@
     cursor: pointer;
     font-weight: 700;
     color: var(--ac-primary-dark);
-    padding: 0.5rem 0.75rem;
-    background: var(--ac-surface);
-    border: 2px solid var(--ac-border);
+    padding: 0.45rem 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background: var(--ac-surface-hover);
+    border: 2px dashed var(--ac-primary-light);
     border-radius: var(--ac-radius-md);
-    box-shadow: var(--ac-shadow);
     list-style: none;
+
+    &::before {
+      content: "▸ ";
+      color: var(--ac-primary);
+    }
 
     &::-webkit-details-marker {
       display: none;
     }
 
     &:hover {
-      background: var(--ac-surface-hover);
+      background: rgba(42, 186, 170, 0.12);
     }
+  }
+
+  &[open] summary::before {
+    content: "▾ ";
   }
 
   &[open] summary {

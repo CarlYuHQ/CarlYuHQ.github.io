@@ -1,10 +1,11 @@
 {% include base_path %}
+{% assign banner_ver = '5' %}
 <div class="ac-banner-wrap ac-banner-wrap--header">
   <img
     class="ac-banner theme-banner"
-    src="{{ base_path }}/images/ac/header_banner_light.png"
-    data-light-src="{{ base_path }}/images/ac/header_banner_light.png"
-    data-dark-src="{{ base_path }}/images/ac/header_banner_dark.png"
+    src="{{ base_path }}/images/ac/header_banner_light.png?v={{ banner_ver }}"
+    data-light-src="{{ base_path }}/images/ac/header_banner_light.png?v={{ banner_ver }}"
+    data-dark-src="{{ base_path }}/images/ac/header_banner_dark.png?v={{ banner_ver }}"
     alt=""
     loading="eager"
     decoding="async"
