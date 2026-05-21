@@ -547,6 +547,15 @@ code {
 .ac-banner-wrap--footer {
   margin-top: 1.25rem;
   margin-bottom: 0;
+  min-height: 4rem;
+}
+
+.ac-banner-wrap--footer .ac-banner--footer {
+  aspect-ratio: var(--ac-banner-footer-ratio);
+  width: 100%;
+  height: auto;
+  min-height: 3.5rem;
+  object-fit: contain;
 }
 
 .ac-banner {
@@ -558,6 +567,11 @@ code {
   margin: 0;
   box-shadow: none;
   vertical-align: top;
+}
+
+.ac-banner-wrap--header .ac-banner {
+  aspect-ratio: var(--ac-banner-header-ratio);
+  object-fit: contain;
 }
 
 /* --- Back to top --- */

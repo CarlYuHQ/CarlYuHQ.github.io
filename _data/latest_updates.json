@@ -2,18 +2,20 @@
   {
     "date": "2026-05-21",
     "type": "site",
-    "title": "完成主页与 Hexo 博客集成（动态同步、废弃 Jekyll Blogs）",
-    "url": "/",
+    "title": "完成主页与 Hexo 博客集成",
+    "url": "/Notes/#site-views",
     "source": "site",
-    "label": "完成主页与 Hexo 博客集成（动态同步、废弃 Jekyll Blogs）"
+    "label": "完成主页与 Hexo 博客集成（动态同步、废弃 Jekyll Blogs）",
+    "excerpt": "随笔博客迁至 Hexo（/Blogs/），通过 atom.xml 自动同步到首页「最新动态」；"
   },
   {
     "date": "2026-05-20",
-    "type": "site",
-    "title": "主页新增最新动态与每日 Routine 板块",
-    "url": "/",
+    "type": "notes",
+    "title": "主页新增最新动态与每日 Routine",
+    "url": "/Notes/",
     "source": "site",
-    "label": "主页新增最新动态与每日 Routine 板块"
+    "label": "主页新增最新动态与每日 Routine 板块",
+    "excerpt": "首页增加「最新动态」时间轴与「每日 Routine」打卡区，"
   },
   {
     "date": "2025-09-12",

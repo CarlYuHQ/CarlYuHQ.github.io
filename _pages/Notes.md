@@ -10,7 +10,7 @@ author_profile: true
 
 
 
-## 观点与本站发展
+## 观点与本站发展 {#site-views}
 
    <details><summary>点击展开 </summary>
   <div class="timeline-container">

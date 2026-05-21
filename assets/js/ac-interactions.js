@@ -189,6 +189,24 @@
     );
   }
 
+  function initPageBanners() {
+    document.querySelectorAll(".theme-banner").forEach(function (img) {
+      if (!img.getAttribute("src") && img.getAttribute("data-light-src")) {
+        img.src = img.getAttribute("data-light-src");
+      }
+      img.loading = "eager";
+      if (img.complete && img.naturalWidth === 0) {
+        var fallback = img.getAttribute("data-light-src");
+        if (fallback) img.src = fallback;
+      }
+    });
+    if (typeof window.applyAcTheme === "function") {
+      var theme =
+        document.documentElement.getAttribute("data-theme") || "nord";
+      window.applyAcTheme(theme);
+    }
+  }
+
   function onReady(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -202,5 +220,6 @@
     initTypewriters();
     markBlogsLinks();
     initBlogsLoading();
+    initPageBanners();
   });
 })();

@@ -81,17 +81,23 @@ function parseSiteUpdates(text) {
     const date = block.match(/^\s*(\d{4}-\d{2}-\d{2})/);
     const type = block.match(/^\s*type:\s*(\S+)/m);
     const title = block.match(/^\s*title:\s*(.+)$/m);
+    const label = block.match(/^\s*label:\s*(.+)$/m);
+    const excerpt = block.match(/^\s*excerpt:\s*>\s*([\s\S]*?)(?=^\s*\w|\s*$)/m);
     const url = block.match(/^\s*url:\s*(.+)$/m);
     const source = block.match(/^\s*source:\s*(\S+)/m);
     if (!date || !title) continue;
-    items.push({
+    const item = {
       date: date[1],
       type: (type && type[1]) || "site",
       title: title[1].trim(),
       url: (url && url[1].trim()) || "/",
       source: (source && source[1]) || "site",
-      label: title[1].trim(),
-    });
+      label: (label && label[1].trim()) || title[1].trim(),
+    };
+    if (excerpt) {
+      item.excerpt = excerpt[1].replace(/\s+/g, " ").trim();
+    }
+    items.push(item);
   }
   return items;
 }
