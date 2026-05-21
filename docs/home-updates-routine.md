@@ -106,7 +106,7 @@ git push
 在 Hexo 仓库运行（需本机已 clone 主页仓库）：
 
 ```powershell
-.\scripts\deploy-and-sync.ps1
+.\tools\deploy-and-sync.ps1
 ```
 
-详见 `D:\Hexo-Blog\blog\scripts\deploy-and-sync.ps1`。
+详见 `D:\Hexo-Blog\blog\tools\deploy-and-sync.ps1`（勿放在 `scripts/`，否则 Hexo 会报错）。
