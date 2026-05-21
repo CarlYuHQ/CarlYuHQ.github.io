@@ -521,7 +521,7 @@ code {
   color: var(--ac-text-light);
 }
 
-/* --- Banners: full image visible (no aspect-ratio box — avoids empty footer) --- */
+/* --- Banners: ratio frame keeps img visible at any browser zoom --- */
 .page__content,
 .archive,
 .page__inner-wrap {
@@ -532,14 +532,15 @@ code {
   box-sizing: border-box;
   display: block;
   width: 100%;
+  max-width: 100%;
   margin: 0 0 1.25rem;
   padding: 0.35rem;
   background-color: var(--ac-bg);
   border: 2px solid var(--ac-border);
   border-radius: var(--ac-radius-lg);
   box-shadow: var(--ac-shadow);
-  line-height: normal;
   overflow: visible;
+  contain: layout style;
 }
 
 .ac-banner-wrap--header {
@@ -551,15 +552,78 @@ code {
   padding: 0.5rem 0.75rem 0.35rem;
 }
 
-.ac-banner-wrap .ac-banner,
+/* 宽高比占位：padding-bottom 百分比相对宽度，缩放时高度始终按比例跟随 */
+.ac-banner-frame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  line-height: 0;
+  border-radius: var(--ac-radius-md);
+  background-color: var(--ac-bg);
+  overflow: hidden;
+}
+
+.ac-banner-frame--header {
+  min-height: 1.75rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: var(--ac-banner-header-pad);
+  }
+
+  @supports (aspect-ratio: 1) {
+    aspect-ratio: var(--ac-banner-header-ratio);
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.ac-banner-frame--footer {
+  min-height: 3.25rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: var(--ac-banner-footer-pad);
+  }
+
+  @supports (aspect-ratio: 1) {
+    aspect-ratio: var(--ac-banner-footer-ratio);
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.ac-banner-frame .ac-banner,
 .ac-banner-wrap img.ac-banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 100%;
-  border-radius: var(--ac-radius-md);
   margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   box-shadow: none;
+  object-fit: contain;
+  object-position: center bottom;
+  /* 避免 _base.scss 全局 img transition 在缩放时导致绘制异常 */
+  transition: none !important;
+  -webkit-transition: none !important;
+  transform: none !important;
 }
 
 /* --- Back to top --- */
