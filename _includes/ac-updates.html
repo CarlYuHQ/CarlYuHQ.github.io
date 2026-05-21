@@ -8,7 +8,7 @@
     {% assign updates = site.data.latest_updates %}
     {% if updates and updates.size > 0 %}
       <div class="timeline-container ac-updates-timeline">
-        {% for item in updates %}
+        {% for item in updates limit:3 %}
           {% assign type = item.type | default: "site" %}
           {% assign icon = "🔔" %}
           {% if type == "blog" %}{% assign icon = "🍃" %}{% endif %}
@@ -21,7 +21,7 @@
             {% assign link = base_path | append: link %}
           {% endunless %}
 
-          {% assign display_date = item.date | date: "%b %-d" %}
+          {% assign display_date = item.date | date: "%Y-%m-%d" %}
 
           <article class="timeline-item ac-update-item">
             <span class="timeline-node ac-update-node" aria-hidden="true">{{ icon }}</span>

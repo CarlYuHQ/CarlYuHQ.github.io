@@ -11,7 +11,7 @@ const HEXO_OUT = path.join(ROOT, "_data", "hexo_latest.json");
 const SITE_UPDATES = path.join(ROOT, "_data", "site_updates.yml");
 const MERGED_OUT = path.join(ROOT, "_data", "latest_updates.json");
 const LIMIT = 8;
-const DISPLAY_LIMIT = 10;
+const DISPLAY_LIMIT = 3;
 
 function fetchText(url) {
   return new Promise((resolve, reject) => {
