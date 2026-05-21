@@ -563,12 +563,14 @@ code {
 .ac-ribbon-wrap--header,
 .ac-banner-wrap--header {
   margin-bottom: 1rem;
+  min-height: calc(var(--ac-banner-header-min-h) + 0.7rem);
 }
 
 .ac-ribbon-wrap--footer,
 .ac-banner-wrap--footer {
   margin: 1.5rem 0 0;
   padding: 0.5rem 0.75rem 0.35rem;
+  min-height: calc(var(--ac-banner-footer-min-h) + 1.2rem);
 }
 
 .page__content > .ac-ribbon-wrap:first-child,
@@ -604,7 +606,6 @@ code {
 .ac-ribbon-wrap--header .ac-ribbon,
 .ac-banner-wrap--header .ac-banner {
   min-height: var(--ac-banner-header-min-h);
-  aspect-ratio: var(--ac-banner-header-ratio);
 }
 
 .ac-ribbon-wrap--footer .ac-ribbon,
@@ -612,7 +613,6 @@ code {
 .ac-banner-wrap--footer .ac-banner,
 .ac-banner-wrap--footer img.ac-banner {
   min-height: var(--ac-banner-footer-min-h);
-  aspect-ratio: var(--ac-banner-footer-ratio);
 }
 
 /* --- Back to top --- */

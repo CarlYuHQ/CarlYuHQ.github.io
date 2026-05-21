@@ -202,6 +202,49 @@
       }
     });
 
+    function enforceRibbonVisibility() {
+      document
+        .querySelectorAll(".theme-ribbon, .theme-banner, .ac-ribbon, .ac-banner")
+        .forEach(function (img) {
+          var wrap = img.closest(".ac-ribbon-wrap, .ac-banner-wrap");
+          var width = img.clientWidth || (wrap && wrap.clientWidth) || 0;
+          if (!width) return;
+          var attrW = parseFloat(img.getAttribute("width")) || 2400;
+          var attrH = parseFloat(img.getAttribute("height")) || 327;
+          var floor = attrH <= 130 ? 40 : 72;
+          var expected = Math.max(floor, Math.round((width * attrH) / attrW));
+          var rendered = Math.round(img.getBoundingClientRect().height || 0);
+
+          // 某些缩放档位渲染高度会掉到 0/1px，强制写入高度兜底
+          if (rendered <= 1) {
+            img.style.height = expected + "px";
+            img.style.width = "100%";
+          } else if (img.style.height) {
+            img.style.removeProperty("height");
+          }
+        });
+    }
+
+    enforceRibbonVisibility();
+
+    if (!window._acRibbonWatchBound) {
+      window._acRibbonWatchBound = true;
+      var rafId = 0;
+      var scheduleCheck = function () {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(enforceRibbonVisibility);
+      };
+      window.addEventListener("resize", scheduleCheck, { passive: true });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", scheduleCheck, {
+          passive: true,
+        });
+      }
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) scheduleCheck();
+      });
+    }
+
     if (typeof window.applyAcTheme === "function") {
       var theme =
         document.documentElement.getAttribute("data-theme") || "nord";
