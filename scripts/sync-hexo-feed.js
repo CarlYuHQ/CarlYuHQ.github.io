@@ -82,7 +82,7 @@ function parseSiteUpdates(text) {
     const type = block.match(/^\s*type:\s*(\S+)/m);
     const title = block.match(/^\s*title:\s*(.+)$/m);
     const label = block.match(/^\s*label:\s*(.+)$/m);
-    const excerpt = block.match(/^\s*excerpt:\s*>\s*([\s\S]*?)(?=^\s*\w|\s*$)/m);
+    const excerpt = block.match(/^\s*excerpt:\s*>\s*([\s\S]*?)(?=^\s{2}[a-z_]+:\s)/m);
     const url = block.match(/^\s*url:\s*(.+)$/m);
     const source = block.match(/^\s*source:\s*(\S+)/m);
     if (!date || !title) continue;
