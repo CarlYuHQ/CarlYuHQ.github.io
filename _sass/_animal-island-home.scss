@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Homepage: latest updates + daily routine
+   ========================================================================== */
+
+.ac-home-section {
+  margin: 1.5rem 0 1.75rem;
+}
+
+.ac-home-section__title {
+  margin: 0 0 0.65rem;
+  color: var(--ac-text-dark);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.ac-section-divider {
+  height: 12px;
+  margin: 0 0 1rem;
+  background: var(--ac-divider-img) center / contain no-repeat;
+  opacity: 0.85;
+}
+
+.ac-home-empty {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  color: var(--ac-text-light);
+  background: var(--ac-surface);
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-md);
+}
+
+/* --- Latest updates --- */
+.ac-updates-panel {
+  animation: ac-fade-up 0.45s ease-out;
+}
+
+.ac-updates-timeline {
+  margin-top: 0.25rem;
+}
+
+.ac-update-item .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ac-update-title {
+  margin: 0;
+  color: var(--ac-text-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.ac-update-meta {
+  margin: 0;
+  color: var(--ac-text-light);
+  font-size: 0.82rem;
+}
+
+.ac-update-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  line-height: 1;
+  background: var(--ac-surface);
+}
+
+.ac-update-link {
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.82rem !important;
+}
+
+/* --- Daily routine --- */
+.ac-routine-panel {
+  padding: 1rem 1.1rem 1.1rem;
+  background: linear-gradient(180deg, var(--ac-surface) 0%, var(--ac-surface-hover) 100%);
+  border: 3px solid var(--ac-border);
+  border-radius: var(--ac-radius-lg);
+  box-shadow: var(--ac-shadow);
+  animation: ac-fade-up 0.5s ease-out;
+}
+
+.ac-routine-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px dashed rgba(159, 146, 125, 0.35);
+}
+
+.ac-routine-date__label {
+  display: block;
+  color: var(--ac-green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ac-routine-date__value {
+  color: var(--ac-text-dark);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.ac-routine-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.ac-routine-progress {
+  color: var(--ac-primary-dark);
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ac-routine-streak {
+  color: var(--ac-text-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ac-routine-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ac-routine-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  margin-bottom: 0.55rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--ac-surface);
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-md);
+  transition: var(--ac-transition);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.is-done {
+    border-color: rgba(111, 186, 44, 0.55);
+    background: rgba(111, 186, 44, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(111, 186, 44, 0.15);
+
+    .ac-routine-item__status {
+      color: #6fba2c;
+      font-weight: 800;
+    }
+  }
+}
+
+.ac-routine-item__emoji {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.ac-routine-item__label {
+  color: var(--ac-text-dark);
+  font-weight: 700;
+}
+
+.ac-routine-item__extra {
+  color: var(--ac-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.ac-routine-item__status {
+  color: var(--ac-text-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ac-routine-hint {
+  margin: 0.85rem 0 0;
+  color: var(--ac-text-light);
+  font-size: 0.75rem;
+  line-height: 1.5;
+
+  code {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ac-routine-item {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .ac-routine-item__extra,
+  .ac-routine-item__status {
+    grid-column: 2;
+  }
+
+  .ac-routine-summary {
+    align-items: flex-start;
+  }
+}

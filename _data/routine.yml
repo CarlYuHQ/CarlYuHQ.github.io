@@ -1,0 +1,15 @@
+tasks:
+  - id: leetcode
+    label: LeetCode
+    emoji: "💻"
+  - id: reading
+    label: 阅读
+    emoji: "📖"
+  - id: exercise
+    label: 运动
+    emoji: "🏃"
+
+meta:
+  leetcode_streak: 0
+
+log: {}

@@ -1,0 +1,43 @@
+{% include base_path %}
+
+<section class="ac-home-section ac-updates" aria-labelledby="ac-updates-title">
+  <h2 id="ac-updates-title" class="ac-home-section__title">最新动态</h2>
+  <div class="ac-section-divider" aria-hidden="true"></div>
+
+  <div class="ac-updates-panel">
+    {% assign updates = site.data.latest_updates %}
+    {% if updates and updates.size > 0 %}
+      <div class="timeline-container ac-updates-timeline">
+        {% for item in updates %}
+          {% assign type = item.type | default: "site" %}
+          {% assign icon = "🔔" %}
+          {% if type == "blog" %}{% assign icon = "🍃" %}{% endif %}
+          {% if type == "notes" %}{% assign icon = "📒" %}{% endif %}
+          {% if type == "cv" %}{% assign icon = "📄" %}{% endif %}
+          {% if type == "repo" %}{% assign icon = "⭐" %}{% endif %}
+
+          {% assign link = item.url %}
+          {% unless link contains "http" %}
+            {% assign link = base_path | append: link %}
+          {% endunless %}
+
+          {% assign display_date = item.date | date: "%b %-d" %}
+
+          <article class="timeline-item ac-update-item">
+            <span class="timeline-node ac-update-node" aria-hidden="true">{{ icon }}</span>
+            <div class="content ac-update-card">
+              <time class="time" datetime="{{ item.date }}">{{ display_date }}</time>
+              <h3 class="ac-update-title">{{ item.label | default: item.title }}</h3>
+              <p class="ac-update-meta">
+                {% if item.source == "hexo" %}来自随笔博客{% else %}本站更新{% endif %}
+              </p>
+              <a class="btn btn--primary ac-update-link" href="{{ link }}">去看看 →</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="ac-home-empty">暂无动态，稍后再来看看。</p>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,50 @@
+{% assign routine = site.data.routine %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign day_log = routine.log[today] %}
+{% assign tasks = routine.tasks %}
+{% assign done_count = 0 %}
+{% assign total_count = tasks | size %}
+
+{% for task in tasks %}
+  {% assign entry = day_log[task.id] %}
+  {% if entry.done %}
+    {% assign done_count = done_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<section class="ac-home-section ac-routine" aria-labelledby="ac-routine-title">
+  <h2 id="ac-routine-title" class="ac-home-section__title">每日 Routine</h2>
+  <div class="ac-section-divider" aria-hidden="true"></div>
+
+  <div class="ac-routine-panel">
+    <header class="ac-routine-header">
+      <div class="ac-routine-date">
+        <span class="ac-routine-date__label">Today</span>
+        <span class="ac-routine-date__value">{{ site.time | date: "%Y-%m-%d" }}</span>
+      </div>
+      <div class="ac-routine-summary">
+        <span class="ac-routine-progress">{{ done_count }}/{{ total_count }}</span>
+        <span class="ac-routine-streak">LeetCode streak: {{ routine.meta.leetcode_streak | default: 0 }} days</span>
+      </div>
+    </header>
+
+    <ul class="ac-routine-list">
+      {% for task in tasks %}
+        {% assign entry = day_log[task.id] %}
+        {% assign is_done = entry.done %}
+        <li class="ac-routine-item{% if is_done %} is-done{% endif %}">
+          <span class="ac-routine-item__emoji" aria-hidden="true">{{ task.emoji }}</span>
+          <span class="ac-routine-item__label">{{ task.label }}</span>
+          {% if task.id == "leetcode" and entry.count %}
+            <span class="ac-routine-item__extra">+{{ entry.count }} 题</span>
+          {% endif %}
+          <span class="ac-routine-item__status">
+            {% if is_done %}已完成{% else %}待完成{% endif %}
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p class="ac-routine-hint">本地更新：<code>npm run routine -- leetcode done 2</code></p>
+  </div>
+</section>
