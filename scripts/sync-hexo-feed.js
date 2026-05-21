@@ -42,6 +42,12 @@ function decodeXml(text) {
     .replace(/&#39;/g, "'");
 }
 
+function stripHtml(html) {
+  let t = decodeXml(html);
+  t = t.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/gi, "$1");
+  return t.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
 function parseAtom(xml) {
   const entries = [];
   const re = /<entry>([\s\S]*?)<\/entry>/g;
@@ -52,7 +58,9 @@ function parseAtom(xml) {
     const link = ((block.match(/<link[^>]*href="([^"]+)"/) || [])[1] || "").trim();
     const updated = ((block.match(/<updated>([\s\S]*?)<\/updated>/) || [])[1] || "").trim();
     const published = ((block.match(/<published>([\s\S]*?)<\/published>/) || [])[1] || updated).trim();
+    const summaryRaw = (block.match(/<summary[^>]*>([\s\S]*?)<\/summary>/) || [])[1] || "";
     if (!title || !link) continue;
+    const excerpt = stripHtml(summaryRaw).slice(0, 80);
     entries.push({
       date: (published || updated).slice(0, 10),
       title,
@@ -60,6 +68,7 @@ function parseAtom(xml) {
       source: "hexo",
       type: "blog",
       label: `更新了博客「${title}」`,
+      ...(excerpt ? { excerpt } : {}),
     });
   }
   return entries.slice(0, LIMIT);
@@ -105,23 +114,39 @@ function writeJson(file, data) {
 }
 
 async function main() {
+  const strict = process.env.STRICT_FEED === "1" || process.argv.includes("--strict");
   let hexoItems = [];
+  let cachedItems = [];
   if (fs.existsSync(HEXO_OUT)) {
     try {
-      hexoItems = JSON.parse(fs.readFileSync(HEXO_OUT, "utf8"));
+      cachedItems = JSON.parse(fs.readFileSync(HEXO_OUT, "utf8"));
+      hexoItems = cachedItems;
     } catch (err) {
+      cachedItems = [];
       hexoItems = [];
     }
   }
 
+  let feedOk = false;
   try {
     const xml = await fetchText(FEED_URL);
     hexoItems = parseAtom(xml);
     writeJson(HEXO_OUT, hexoItems);
+    feedOk = true;
     console.log(`Synced ${hexoItems.length} entries from Hexo feed.`);
   } catch (err) {
     console.warn(`Feed sync failed: ${err.message}`);
-    console.warn("Using existing hexo_latest.json if present.");
+    if (cachedItems.length) {
+      console.warn("Using existing hexo_latest.json.");
+      hexoItems = cachedItems;
+    } else if (strict) {
+      console.error("STRICT_FEED: no feed and no cache.");
+      process.exit(1);
+    }
+  }
+
+  if (strict && !feedOk) {
+    process.exit(1);
   }
 
   let siteItems = [];

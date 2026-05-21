@@ -1,3 +1,8 @@
+- date: 2026-05-21
+  type: site
+  title: 完成主页与 Hexo 博客集成（动态同步、废弃 Jekyll Blogs）
+  url: /
+  source: site
 - date: 2026-05-20
   type: site
   title: 主页新增最新动态与每日 Routine 板块

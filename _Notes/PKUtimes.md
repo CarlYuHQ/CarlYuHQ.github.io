@@ -1,10 +1,12 @@
 ---
 title: "PKUtimes"
-collection: Blogs
-type: "Blogs"
-permalink: /hiddenBlogs/PKUtimes
+collection: Notes
+type: "Notes"
+permalink: /Notes/PKUtimes
+redirect_from:
+  - /hiddenBlogs/PKUtimes
 venue: "Peking Univercity"
-date: 2025-6-01
+date: 2025-06-01
 location: "Beijing, China"
 ---
 # PKUtimes

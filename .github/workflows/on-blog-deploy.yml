@@ -1,0 +1,36 @@
+name: Sync feed on blog deploy
+
+on:
+  repository_dispatch:
+    types: [blog-deployed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync atom feed and merge updates
+        env:
+          STRICT_FEED: "1"
+        run: node scripts/sync-hexo-feed.js --strict
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/hexo_latest.json _data/latest_updates.json
+          if git diff --staged --quiet; then
+            echo "No feed changes."
+          else
+            git commit -m "chore: sync Hexo feed after blog deploy"
+            git push
+          fi

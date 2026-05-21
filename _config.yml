@@ -195,7 +195,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   Blogs:
-    output: true
+    output: false
     permalink: /:collection/:path/
   additions:
     output: true

@@ -28,6 +28,9 @@
             <div class="content ac-update-card">
               <time class="time" datetime="{{ item.date }}">{{ display_date }}</time>
               <h3 class="ac-update-title">{{ item.label | default: item.title }}</h3>
+              {% if item.excerpt %}
+                <p class="ac-update-excerpt">{{ item.excerpt }}</p>
+              {% endif %}
               <p class="ac-update-meta">
                 {% if item.source == "hexo" %}来自随笔博客{% else %}本站更新{% endif %}
               </p>
