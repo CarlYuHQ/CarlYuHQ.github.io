@@ -17,7 +17,7 @@ author_profile: true
 <div class="friend-links-container">
     <!-- 每个好友卡片 -->
     <div class="friend-card">
-      <a href="https://iculizhi.github.io" target="_blank">
+      <a href="https://carlyuhq.github.io/Blogs/" target="_blank">
         <img src="../images/self.png" alt="ICUlizhi's Blog" class="avatar" onerror="this.onerror=null;this.src='../images/self.jpg';">
         <div class="friend-name">CarlYuHQ's Blog</div>
         <div class="friend-intro">朝闻道，夕死可矣</div>
