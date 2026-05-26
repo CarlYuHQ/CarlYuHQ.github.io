@@ -252,12 +252,18 @@
     }
   }
 
-  function routineDateKey() {
-    var now = new Date();
+  function routineDateKey(date) {
+    var now = date || new Date();
     var y = now.getFullYear();
     var m = String(now.getMonth() + 1).padStart(2, "0");
     var d = String(now.getDate()).padStart(2, "0");
     return y + "-" + m + "-" + d;
+  }
+
+  function parseDateKey(key) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(key || "");
+    if (!m) return null;
+    return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
   }
 
   function initRoutinePanel() {
@@ -273,8 +279,10 @@
     if (!data || !Array.isArray(data.tasks)) return;
 
     var today = routineDateKey();
+    var todayDate = parseDateKey(today) || new Date();
     var dayLog = (data.log && data.log[today]) || {};
     var doneCount = 0;
+    var totalTasks = data.tasks.length || 1;
 
     var dateEl = document.querySelector("[data-ac-routine-date]");
     if (dateEl) dateEl.textContent = today;
@@ -303,11 +311,118 @@
     });
 
     var progressEl = document.querySelector("[data-ac-routine-progress]");
-    if (progressEl) progressEl.textContent = doneCount + "/" + data.tasks.length;
+    if (progressEl) progressEl.textContent = doneCount + "/" + totalTasks;
 
     var streak = data.meta && data.meta.leetcode_streak ? data.meta.leetcode_streak : 0;
     var streakEl = document.querySelector("[data-ac-routine-streak]");
     if (streakEl) streakEl.textContent = "LeetCode streak: " + streak + " days";
+
+    function dayDoneCount(day) {
+      var n = 0;
+      data.tasks.forEach(function (task) {
+        if (day[task.id] && day[task.id].done) n += 1;
+      });
+      return n;
+    }
+
+    var recent = [];
+    var sumDone30 = 0;
+    var activeDays30 = 0;
+    for (var i = 29; i >= 0; i--) {
+      var d = new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate() - i);
+      var key = routineDateKey(d);
+      var day = (data.log && data.log[key]) || {};
+      var done = dayDoneCount(day);
+      var pct = done / totalTasks;
+      if (done > 0) activeDays30 += 1;
+      sumDone30 += done;
+      recent.push({ key: key, pct: pct });
+    }
+
+    var monthDays = todayDate.getDate();
+    var monthDoneSum = 0;
+    var monthTaskDoneDays = {};
+    var monthLeetCount = 0;
+    data.tasks.forEach(function (t) {
+      monthTaskDoneDays[t.id] = 0;
+    });
+
+    for (var dayIdx = 1; dayIdx <= monthDays; dayIdx++) {
+      var md = new Date(todayDate.getFullYear(), todayDate.getMonth(), dayIdx);
+      var mKey = routineDateKey(md);
+      var mLog = (data.log && data.log[mKey]) || {};
+      monthDoneSum += dayDoneCount(mLog);
+      data.tasks.forEach(function (t) {
+        if (mLog[t.id] && mLog[t.id].done) monthTaskDoneDays[t.id] += 1;
+      });
+      if (mLog.leetcode && mLog.leetcode.count) {
+        monthLeetCount += Number(mLog.leetcode.count) || 0;
+      }
+    }
+
+    function percentText(num, den) {
+      if (!den) return "0%";
+      return ((num / den) * 100).toFixed(1) + "%";
+    }
+
+    var stat30Rate = document.querySelector("[data-ac-stat-30rate]");
+    if (stat30Rate) stat30Rate.textContent = percentText(sumDone30, 30 * totalTasks);
+    var stat30Detail = document.querySelector("[data-ac-stat-30detail]");
+    if (stat30Detail) stat30Detail.textContent = sumDone30 + "/" + 30 * totalTasks;
+    var stat30Days = document.querySelector("[data-ac-stat-30days]");
+    if (stat30Days) stat30Days.textContent = activeDays30 + " 天";
+    var stat30DaysDetail = document.querySelector("[data-ac-stat-30days-detail]");
+    if (stat30DaysDetail) stat30DaysDetail.textContent = activeDays30 + "/30 天";
+    var statMonthRate = document.querySelector("[data-ac-stat-month-rate]");
+    if (statMonthRate) statMonthRate.textContent = percentText(monthDoneSum, monthDays * totalTasks);
+    var statMonthDetail = document.querySelector("[data-ac-stat-month-detail]");
+    if (statMonthDetail) statMonthDetail.textContent = monthDoneSum + "/" + monthDays * totalTasks;
+
+    var monthList = document.querySelector("[data-ac-routine-month-list]");
+    if (monthList) {
+      monthList.innerHTML = "";
+      data.tasks.forEach(function (task) {
+        var item = document.createElement("div");
+        item.className = "ac-routine-month-item";
+        var extra = "";
+        if (task.id === "leetcode") extra = "，共 " + monthLeetCount + " 题";
+        item.textContent =
+          task.emoji +
+          " " +
+          task.label +
+          "：完成 " +
+          monthTaskDoneDays[task.id] +
+          "/" +
+          monthDays +
+          " 天" +
+          extra;
+        monthList.appendChild(item);
+      });
+    }
+
+    var chart = document.querySelector("[data-ac-routine-chart]");
+    if (chart) {
+      chart.innerHTML = "";
+      recent.forEach(function (it) {
+        var bar = document.createElement("span");
+        var h = Math.max(2, Math.round(it.pct * 100));
+        bar.className = "ac-routine-chart__bar";
+        bar.style.height = h + "%";
+        bar.title = it.key + " 完成率 " + (it.pct * 100).toFixed(0) + "%";
+        chart.appendChild(bar);
+      });
+    }
+
+    var toggle = document.querySelector("[data-ac-routine-stats-toggle]");
+    var statsPanel = document.querySelector("[data-ac-routine-stats]");
+    if (toggle && statsPanel) {
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+        toggle.textContent = expanded ? "查看统计" : "收起统计";
+        statsPanel.hidden = expanded;
+      });
+    }
   }
 
   function onReady(fn) {

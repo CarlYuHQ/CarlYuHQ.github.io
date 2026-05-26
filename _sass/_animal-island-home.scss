@@ -138,6 +138,18 @@
   font-weight: 600;
 }
 
+.ac-routine-stats-toggle {
+  margin-top: 0.35rem;
+  padding: 0.28rem 0.65rem;
+  border: 2px solid var(--ac-primary);
+  border-radius: var(--ac-radius-full);
+  background: var(--ac-surface);
+  color: var(--ac-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 .ac-routine-list {
   margin: 0;
   padding: 0;
@@ -195,6 +207,83 @@
   white-space: nowrap;
 }
 
+.ac-routine-stats {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 2px dashed rgba(159, 146, 125, 0.35);
+}
+
+.ac-routine-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.ac-routine-stat-card {
+  padding: 0.6rem 0.7rem;
+  background: var(--ac-surface);
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-md);
+}
+
+.ac-routine-stat-card__label {
+  display: block;
+  color: var(--ac-text-light);
+  font-size: 0.72rem;
+}
+
+.ac-routine-stat-card__value {
+  display: block;
+  color: var(--ac-primary-dark);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.ac-routine-stat-card__sub {
+  color: var(--ac-text);
+  font-size: 0.73rem;
+}
+
+.ac-routine-month-list {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.ac-routine-month-item {
+  font-size: 0.76rem;
+  color: var(--ac-text);
+}
+
+.ac-routine-chart-wrap {
+  margin-top: 0.75rem;
+}
+
+.ac-routine-chart-title {
+  margin-bottom: 0.35rem;
+  color: var(--ac-text-light);
+  font-size: 0.72rem;
+}
+
+.ac-routine-chart {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(0, 1fr));
+  align-items: end;
+  gap: 0.16rem;
+  height: 72px;
+  padding: 0.35rem;
+  background: var(--ac-surface);
+  border: 2px solid var(--ac-border);
+  border-radius: var(--ac-radius-md);
+}
+
+.ac-routine-chart__bar {
+  border-radius: 999px 999px 2px 2px;
+  min-height: 2px;
+  background: linear-gradient(180deg, var(--ac-primary-light), var(--ac-primary-dark));
+}
+
 .ac-routine-hint {
   margin: 0.85rem 0 0;
   color: var(--ac-text-light);
@@ -207,6 +296,11 @@
 }
 
 @media (max-width: 600px) {
+  .ac-routine-stats-grid,
+  .ac-routine-month-list {
+    grid-template-columns: 1fr;
+  }
+
   .ac-routine-item {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;

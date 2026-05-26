@@ -15,6 +15,9 @@
       <div class="ac-routine-summary">
         <span class="ac-routine-progress" data-ac-routine-progress>0/{{ total_count }}</span>
         <span class="ac-routine-streak" data-ac-routine-streak>LeetCode streak: {{ routine.meta.leetcode_streak | default: 0 }} days</span>
+        <button type="button" class="ac-routine-stats-toggle" data-ac-routine-stats-toggle aria-expanded="false">
+          查看统计
+        </button>
       </div>
     </header>
 
@@ -28,6 +31,33 @@
         </li>
       {% endfor %}
     </ul>
+
+    <section class="ac-routine-stats" data-ac-routine-stats hidden>
+      <div class="ac-routine-stats-grid">
+        <div class="ac-routine-stat-card">
+          <span class="ac-routine-stat-card__label">近30天完成率</span>
+          <strong class="ac-routine-stat-card__value" data-ac-stat-30rate>0%</strong>
+          <span class="ac-routine-stat-card__sub" data-ac-stat-30detail>0/0</span>
+        </div>
+        <div class="ac-routine-stat-card">
+          <span class="ac-routine-stat-card__label">近30天打卡天数</span>
+          <strong class="ac-routine-stat-card__value" data-ac-stat-30days>0 天</strong>
+          <span class="ac-routine-stat-card__sub" data-ac-stat-30days-detail>0/30 天</span>
+        </div>
+        <div class="ac-routine-stat-card">
+          <span class="ac-routine-stat-card__label">本月完成率</span>
+          <strong class="ac-routine-stat-card__value" data-ac-stat-month-rate>0%</strong>
+          <span class="ac-routine-stat-card__sub" data-ac-stat-month-detail>0/0</span>
+        </div>
+      </div>
+
+      <div class="ac-routine-month-list" data-ac-routine-month-list></div>
+
+      <div class="ac-routine-chart-wrap">
+        <div class="ac-routine-chart-title">近30天每日完成率</div>
+        <div class="ac-routine-chart" data-ac-routine-chart></div>
+      </div>
+    </section>
 
   </div>
   <script id="ac-routine-data" type="application/json">{{ routine | jsonify }}</script>
