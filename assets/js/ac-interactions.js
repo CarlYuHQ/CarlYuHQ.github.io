@@ -252,6 +252,64 @@
     }
   }
 
+  function routineDateKey() {
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = String(now.getMonth() + 1).padStart(2, "0");
+    var d = String(now.getDate()).padStart(2, "0");
+    return y + "-" + m + "-" + d;
+  }
+
+  function initRoutinePanel() {
+    var payload = document.getElementById("ac-routine-data");
+    if (!payload) return;
+
+    var data = null;
+    try {
+      data = JSON.parse(payload.textContent || "{}");
+    } catch (e) {
+      return;
+    }
+    if (!data || !Array.isArray(data.tasks)) return;
+
+    var today = routineDateKey();
+    var dayLog = (data.log && data.log[today]) || {};
+    var doneCount = 0;
+
+    var dateEl = document.querySelector("[data-ac-routine-date]");
+    if (dateEl) dateEl.textContent = today;
+
+    document.querySelectorAll("[data-ac-routine-item]").forEach(function (item) {
+      var taskId = item.getAttribute("data-task-id");
+      var entry = dayLog[taskId] || { done: false };
+      var isDone = !!entry.done;
+      if (isDone) doneCount += 1;
+
+      item.classList.toggle("is-done", isDone);
+
+      var statusEl = item.querySelector("[data-ac-routine-status]");
+      if (statusEl) statusEl.textContent = isDone ? "已完成" : "待完成";
+
+      var extraEl = item.querySelector("[data-ac-routine-extra]");
+      if (extraEl) {
+        if (taskId === "leetcode" && entry.count) {
+          extraEl.hidden = false;
+          extraEl.textContent = "+" + entry.count + " 题";
+        } else {
+          extraEl.hidden = true;
+          extraEl.textContent = "";
+        }
+      }
+    });
+
+    var progressEl = document.querySelector("[data-ac-routine-progress]");
+    if (progressEl) progressEl.textContent = doneCount + "/" + data.tasks.length;
+
+    var streak = data.meta && data.meta.leetcode_streak ? data.meta.leetcode_streak : 0;
+    var streakEl = document.querySelector("[data-ac-routine-streak]");
+    if (streakEl) streakEl.textContent = "LeetCode streak: " + streak + " days";
+  }
+
   function onReady(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -266,5 +324,6 @@
     markBlogsLinks();
     initBlogsLoading();
     initPageBanners();
+    initRoutinePanel();
   });
 })();
