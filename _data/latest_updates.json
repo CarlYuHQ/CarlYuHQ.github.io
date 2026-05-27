@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-05-27",
+    "title": "主页与博客联动重构纪要",
+    "url": "https://carlyuhq.github.io/Blogs/2026/05/27/%E4%B8%BB%E9%A1%B5%E4%B8%8E%E5%8D%9A%E5%AE%A2%E8%81%94%E5%8A%A8%E9%87%8D%E6%9E%84%E7%BA%AA%E8%A6%81/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「主页与博客联动重构纪要」",
+    "excerpt": "这篇我想用“复盘 + 操作手册”的方式，完整记录这段时间我对个人主页和随笔博客做的联动重构。 说白了这次重构只有三个目标： 写作只在 Hexo 做一次 ，不用重"
+  },
+  {
     "date": "2026-05-21",
     "type": "site",
     "title": "完成主页与 Hexo 博客集成",
@@ -16,14 +25,5 @@
     "source": "site",
     "label": "主页新增最新动态与每日 Routine 板块",
     "excerpt": "首页增加「最新动态」时间轴与「每日 Routine」打卡区， 并接入 Animal Island 主题样式与日夜切换。"
-  },
-  {
-    "date": "2025-09-12",
-    "title": "“研究方法：定量”",
-    "url": "https://carlyuhq.github.io/Blogs/2025/09/12/%E2%80%9C%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%EF%BC%9A%E5%AE%9A%E9%87%8F%E2%80%9D/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「“研究方法：定量”」",
-    "excerpt": "研究方法：定量 张鹏翼 模块一：研究范式与研究过程 模块二：社会科学方法概览 模块三：定量研究方法"
   }
 ]
