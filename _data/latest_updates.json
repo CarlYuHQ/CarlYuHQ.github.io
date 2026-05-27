@@ -1,6 +1,15 @@
 [
   {
     "date": "2026-05-27",
+    "title": "强化学习笔记（一）基本概念",
+    "url": "https://carlyuhq.github.io/Blogs/2026/05/27/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「强化学习笔记（一）基本概念」",
+    "excerpt": "本文为强化学习课程 Chapter 1: Basic Concepts 的详细笔记，内容涵盖状态、动作、状态转移、策略、奖励、回报、马尔可夫决策过程（MDP）等"
+  },
+  {
+    "date": "2026-05-27",
     "title": "主页与博客联动重构纪要",
     "url": "https://carlyuhq.github.io/Blogs/2026/05/27/%E4%B8%BB%E9%A1%B5%E4%B8%8E%E5%8D%9A%E5%AE%A2%E8%81%94%E5%8A%A8%E9%87%8D%E6%9E%84%E7%BA%AA%E8%A6%81/",
     "source": "hexo",
@@ -16,14 +25,5 @@
     "source": "site",
     "label": "完成主页与 Hexo 博客集成（动态同步、废弃 Jekyll Blogs）",
     "excerpt": "随笔博客迁至 Hexo（/Blogs/），通过 atom.xml 自动同步到首页「最新动态」； 废弃 Jekyll Blogs 子站；课程笔记与「观点与本站发展」保留在 Notes。 顶栏 Blogs 外链至 Hexo，主页与博客统一 Animal Island 风格。"
-  },
-  {
-    "date": "2026-05-20",
-    "type": "notes",
-    "title": "主页新增最新动态与每日 Routine",
-    "url": "/Notes/",
-    "source": "site",
-    "label": "主页新增最新动态与每日 Routine 板块",
-    "excerpt": "首页增加「最新动态」时间轴与「每日 Routine」打卡区， 并接入 Animal Island 主题样式与日夜切换。"
   }
 ]
