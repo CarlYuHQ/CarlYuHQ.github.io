@@ -293,6 +293,7 @@
       toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
       toggle.textContent = expanded ? "收起统计" : "查看统计";
       statsPanel.hidden = !expanded;
+      statsPanel.classList.toggle("is-open", expanded);
     }
 
     // 先绑定按钮，避免后续统计逻辑报错导致按钮失效
@@ -304,16 +305,19 @@
         savedExpanded = false;
       }
       applyStatsExpanded(savedExpanded);
-      toggle.addEventListener("click", function () {
-        var expanded = toggle.getAttribute("aria-expanded") === "true";
-        var nextExpanded = !expanded;
-        applyStatsExpanded(nextExpanded);
-        try {
-          localStorage.setItem(statsStorageKey, nextExpanded ? "1" : "0");
-        } catch (e) {
-          /* ignore storage errors */
-        }
-      });
+      if (!toggle.dataset.boundStatsToggle) {
+        toggle.dataset.boundStatsToggle = "1";
+        toggle.addEventListener("click", function () {
+          var expanded = toggle.getAttribute("aria-expanded") === "true";
+          var nextExpanded = !expanded;
+          applyStatsExpanded(nextExpanded);
+          try {
+            localStorage.setItem(statsStorageKey, nextExpanded ? "1" : "0");
+          } catch (e) {
+            /* ignore storage errors */
+          }
+        });
+      }
     }
 
     var dateEl = document.querySelector("[data-ac-routine-date]");

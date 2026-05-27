@@ -208,9 +208,14 @@
 }
 
 .ac-routine-stats {
+  display: none;
   margin-top: 0.85rem;
   padding-top: 0.85rem;
   border-top: 2px dashed rgba(159, 146, 125, 0.35);
+}
+
+.ac-routine-stats.is-open {
+  display: block;
 }
 
 .ac-routine-stats-grid {
