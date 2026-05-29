@@ -1,12 +1,48 @@
 [
   {
     "date": "2026-05-29",
+    "title": "强化学习笔记（附录）数学预备知识",
+    "url": "https://carlyuhq.github.io/Blogs/2026/05/29/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E9%99%84%E5%BD%95-%E6%95%B0%E5%AD%A6%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「强化学习笔记（附录）数学预备知识」",
+    "excerpt": "本附录汇总了本书中频繁使用的数学预备知识，包括概率论基础（附录 A）、测度论概率（附录 B）、序列收敛（附录 C）和梯度下降（附录 D）。这些内容为理解正文中的"
+  },
+  {
+    "date": "2026-05-29",
     "title": "强化学习笔记（六）随机逼近",
     "url": "https://carlyuhq.github.io/Blogs/2026/05/29/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E9%80%BC%E8%BF%91/",
     "source": "hexo",
     "type": "blog",
     "label": "更新了博客「强化学习笔记（六）随机逼近」",
     "excerpt": "本文为强化学习课程 Chapter 6: Stochastic Approximation 的详细笔记。本章不介绍具体的强化学习算法，而是为第七章的 时序差分学"
+  },
+  {
+    "date": "2026-05-29",
+    "title": "强化学习笔记（十）演员-评论家方法",
+    "url": "https://carlyuhq.github.io/Blogs/2026/05/29/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E5%8D%81%E7%AB%A0-%E6%BC%94%E5%91%98%E8%AF%84%E8%AE%BA%E5%AE%B6%E6%96%B9%E6%B3%95/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「强化学习笔记（十）演员-评论家方法」",
+    "excerpt": "本章介绍演员-评论家（Actor-Critic）方法。从一个角度来看，”演员-评论家”指的是一种融合了基于策略方法和基于值方法的结构：”演员”（actor）负责"
+  },
+  {
+    "date": "2026-05-29",
+    "title": "强化学习笔记（九）策略梯度方法",
+    "url": "https://carlyuhq.github.io/Blogs/2026/05/29/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6%E6%96%B9%E6%B3%95/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「强化学习笔记（九）策略梯度方法」",
+    "excerpt": "函数逼近的思想不仅可以用于表示状态&#x2F;动作值（第 8 章），还可以用于表示策略。本章介绍如何将策略表示为参数化函数 π ( a ∣ s , θ ) &#"
+  },
+  {
+    "date": "2026-05-29",
+    "title": "强化学习笔记（八）值函数方法",
+    "url": "https://carlyuhq.github.io/Blogs/2026/05/29/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%80%BC%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「强化学习笔记（八）值函数方法」",
+    "excerpt": "本章继续研究时序差分学习算法，但使用不同的方法来表示状态&#x2F;动作值。目前为止，状态&#x2F;动作值一直用表格表示。表格方法直观易懂，但处理大型状态或动"
   },
   {
     "date": "2026-05-29",
@@ -34,41 +70,5 @@
     "type": "blog",
     "label": "更新了博客「强化学习笔记（四）值迭代与策略迭代」",
     "excerpt": "本文为强化学习课程 Chapter 4: Value Iteration and Policy Iteration 的详细笔记。本章介绍三个密切相关的 动态规划"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "谈谈刷leetcode",
-    "url": "https://carlyuhq.github.io/Blogs/2026/05/28/%E8%B0%88%E8%B0%88%E5%88%B7leetcode/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「谈谈刷leetcode」",
-    "excerpt": "刷 LeetCode 是准备技术面试时绕不开的一步，但对我来说，这段过程并不轻松。 这篇先记录一下我目前刷题的真实体验和一些心得，后面也会持续更新题目笔记与思路"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "强化学习笔记（三）最优状态值与贝尔曼最优方程",
-    "url": "https://carlyuhq.github.io/Blogs/2026/05/28/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%9C%80%E4%BC%98%E7%8A%B6%E6%80%81%E5%80%BC%E4%B8%8E%E8%B4%9D%E5%B0%94%E6%9B%BC%E6%9C%80%E4%BC%98%E6%96%B9%E7%A8%8B/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「强化学习笔记（三）最优状态值与贝尔曼最优方程」",
-    "excerpt": "本文为强化学习课程 Chapter 3: Optimal State Values and Bellman Optimality Equation 的详细笔记。"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "强化学习笔记（二）状态值与贝尔曼方程",
-    "url": "https://carlyuhq.github.io/Blogs/2026/05/28/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%8A%B6%E6%80%81%E5%80%BC%E4%B8%8E%E8%B4%9D%E5%B0%94%E6%9B%BC%E6%96%B9%E7%A8%8B/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「强化学习笔记（二）状态值与贝尔曼方程」",
-    "excerpt": "本文为强化学习课程 Chapter 2: State Values and Bellman Equation 的详细笔记。本章引入 状态值（state valu"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "强化学习笔记（一）基本概念",
-    "url": "https://carlyuhq.github.io/Blogs/2026/05/27/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「强化学习笔记（一）基本概念」",
-    "excerpt": "本文为强化学习课程 Chapter 1: Basic Concepts 的详细笔记，内容涵盖状态、动作、状态转移、策略、奖励、回报、马尔可夫决策过程（MDP）等"
   }
 ]
