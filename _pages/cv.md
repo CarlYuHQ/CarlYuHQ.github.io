@@ -35,7 +35,12 @@ Awards
 * ICBC STAR Scholarship(2021–2022)
 * Spiritual Guide Leadership Scholarship(2022–2023)
 * National Scholarship(2023-2024)
+* Outstanding Graduate of Peking University, Class of 2025
 * Master's Academic Scholarship (2024-2025)
+
+Publications
+======
+* See [Links](/Links/) for publications and manuscripts under review.
 
 <!--
 Work experience
