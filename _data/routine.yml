@@ -10,8 +10,10 @@ tasks:
     emoji: "🏃"
 
 meta:
-  leetcode_streak: 0
+  leetcode_streak: 1
 
 log:
   "2026-05-28":
+    leetcode: { done: true, count: 1 }
+  "2026-07-02":
     leetcode: { done: true, count: 1 }
