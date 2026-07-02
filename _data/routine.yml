@@ -12,4 +12,6 @@ tasks:
 meta:
   leetcode_streak: 0
 
-log: {}
+log:
+  "2026-05-28":
+    leetcode: { done: true, count: 1 }

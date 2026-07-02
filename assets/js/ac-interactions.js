@@ -349,7 +349,23 @@
     var progressEl = document.querySelector("[data-ac-routine-progress]");
     if (progressEl) progressEl.textContent = doneCount + "/" + totalTasks;
 
-    var streak = data.meta && data.meta.leetcode_streak ? data.meta.leetcode_streak : 0;
+    function computeLeetcodeStreak() {
+      var streakCount = 0;
+      var d = new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate());
+      for (var i = 0; i < 365; i++) {
+        var key = routineDateKey(d);
+        var entry = data.log && data.log[key] && data.log[key].leetcode;
+        if (entry && entry.done) {
+          streakCount += 1;
+          d.setDate(d.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+      return streakCount;
+    }
+
+    var streak = computeLeetcodeStreak();
     var streakEl = document.querySelector("[data-ac-routine-streak]");
     if (streakEl) streakEl.textContent = "LeetCode streak: " + streak + " days";
 

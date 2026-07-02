@@ -144,6 +144,7 @@ function saveRoutine(data) {
 }
 
 function printStatus(data, dateKey) {
+  data.meta.leetcode_streak = computeLeetcodeStreak(data.log || {});
   const day = (data.log && data.log[dateKey]) || {};
   console.log(`Routine for ${dateKey}`);
   console.log(`LeetCode streak: ${data.meta.leetcode_streak || 0} days`);
@@ -175,6 +176,7 @@ function main() {
   if (args[0] === "status") {
     const dateKey = args[1] || todayKey();
     printStatus(data, dateKey);
+    saveRoutine(data);
     return;
   }
 
