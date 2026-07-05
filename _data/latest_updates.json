@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-05",
+    "title": "浅谈 LangChain 与 LlamaIndex",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/05/%E6%B5%85%E8%B0%88LangChain%E4%B8%8ELlamaIndex/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「浅谈 LangChain 与 LlamaIndex」",
+    "excerpt": "当你第一次想用大语言模型去回答”自己私人文档里的问题”时，几乎不可避免地会撞上两个名字： LangChain 与 LlamaIndex 。它们是当下 LLM 应"
+  },
+  {
     "date": "2026-07-02",
     "title": "RAG 全景解析：检索增强生成从原理到落地",
     "url": "https://carlyuhq.github.io/Blogs/2026/07/02/RAG%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%E5%85%A8%E6%99%AF%E8%A7%A3%E6%9E%90/",
@@ -16,14 +25,5 @@
     "type": "blog",
     "label": "更新了博客「Agentic-RL 详解：从 SFT 到 GRPO 的智能体训练」",
     "excerpt": "本文主要整理自 DataWhale Hello-Agents 的 Agentic-RL 章节，并结合 DeepSeekMath 论文 、 GRPO 相关解读 以"
-  },
-  {
-    "date": "2026-06-17",
-    "title": "智能体通信协议详解：MCP、A2A 与 ANP",
-    "url": "https://carlyuhq.github.io/Blogs/2026/06/17/%E6%99%BA%E8%83%BD%E4%BD%93%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3-MCP-A2A%E4%B8%8EANP/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「智能体通信协议详解：MCP、A2A 与 ANP」",
-    "excerpt": "本文主要整理自 DataWhale Hello-Agents 第十章，并结合 MCP 官方规范 、 A2A 协议说明 以及社区实践资料写成。目标不是背概念，而是"
   }
 ]

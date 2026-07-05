@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-05",
+    "title": "浅谈 LangChain 与 LlamaIndex",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/05/%E6%B5%85%E8%B0%88LangChain%E4%B8%8ELlamaIndex/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「浅谈 LangChain 与 LlamaIndex」",
+    "excerpt": "当你第一次想用大语言模型去回答”自己私人文档里的问题”时，几乎不可避免地会撞上两个名字： LangChain 与 LlamaIndex 。它们是当下 LLM 应"
+  },
+  {
     "date": "2026-07-02",
     "title": "RAG 全景解析：检索增强生成从原理到落地",
     "url": "https://carlyuhq.github.io/Blogs/2026/07/02/RAG%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%E5%85%A8%E6%99%AF%E8%A7%A3%E6%9E%90/",
@@ -61,14 +70,5 @@
     "type": "blog",
     "label": "更新了博客「强化学习笔记（十）演员-评论家方法」",
     "excerpt": "本章介绍演员-评论家（Actor-Critic）方法。从一个角度来看，”演员-评论家”指的是一种融合了基于策略方法和基于值方法的结构：”演员”（actor）负责"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "强化学习笔记（九）策略梯度方法",
-    "url": "https://carlyuhq.github.io/Blogs/2026/05/29/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6%E6%96%B9%E6%B3%95/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「强化学习笔记（九）策略梯度方法」",
-    "excerpt": "函数逼近的思想不仅可以用于表示状态&#x2F;动作值（第 8 章），还可以用于表示策略。本章介绍如何将策略表示为参数化函数 π ( a ∣ s , θ ) &#"
   }
 ]
