@@ -1,11 +1,11 @@
 [
   {
     "date": "2026-07-12",
-    "title": "Nanobot 详解：4000 行代码的超轻量个人 AI 智能体",
+    "title": "Nanobot 源码详解：4000 行代码如何打造一个超轻量个人 AI 智能体",
     "url": "https://carlyuhq.github.io/Blogs/2026/07/12/Nanobot%E8%AF%A6%E8%A7%A3-4000%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B6%85%E8%BD%BB%E9%87%8F%E4%B8%AA%E4%BA%BAAI%E6%99%BA%E8%83%BD%E4%BD%93/",
     "source": "hexo",
     "type": "blog",
-    "label": "更新了博客「Nanobot 详解：4000 行代码的超轻量个人 AI 智能体」",
+    "label": "更新了博客「Nanobot 源码详解：4000 行代码如何打造一个超轻量个人 AI 智能体」",
     "excerpt": "2026 年初，一个叫 Nanobot 🐈 的开源项目在几天内冲上数千 star，理由很有意思：它宣称用 约 4000 行 Python 就复现了那个 43 "
   },
   {
