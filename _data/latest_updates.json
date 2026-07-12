@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-12",
+    "title": "Nanobot 详解：4000 行代码的超轻量个人 AI 智能体",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/12/Nanobot%E8%AF%A6%E8%A7%A3-4000%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%9A%84%E8%B6%85%E8%BD%BB%E9%87%8F%E4%B8%AA%E4%BA%BAAI%E6%99%BA%E8%83%BD%E4%BD%93/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「Nanobot 详解：4000 行代码的超轻量个人 AI 智能体」",
+    "excerpt": "2026 年初，一个叫 Nanobot 🐈 的开源项目在几天内冲上数千 star，理由很有意思：它宣称用 约 4000 行 Python 就复现了那个 43 "
+  },
+  {
     "date": "2026-07-07",
     "title": "联网了却访问不了外网？网络分层、代理与 SSH 跳板详解",
     "url": "https://carlyuhq.github.io/Blogs/2026/07/07/%E8%81%94%E7%BD%91%E4%BA%86%E5%8D%B4%E8%AE%BF%E9%97%AE%E4%B8%8D%E4%BA%86%E5%A4%96%E7%BD%91-%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E4%B8%8E%E4%BB%A3%E7%90%86%E8%B7%B3%E6%9D%BF%E8%AF%A6%E8%A7%A3/",
@@ -16,14 +25,5 @@
     "type": "blog",
     "label": "更新了博客「Agent 意图识别怎么做？Skill 如何精准命中？」",
     "excerpt": "本文围绕两个 Agent 工程的核心问题展开：”Agent 意图识别怎么做？”与”Agent 如何精准命中 Skill？”。由于无法直接观看原短视频，文中内容综"
-  },
-  {
-    "date": "2026-07-05",
-    "title": "浅谈 LangChain 与 LlamaIndex",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/05/%E6%B5%85%E8%B0%88LangChain%E4%B8%8ELlamaIndex/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「浅谈 LangChain 与 LlamaIndex」",
-    "excerpt": "当你第一次想用大语言模型去回答”自己私人文档里的问题”时，几乎不可避免地会撞上两个名字： LangChain 与 LlamaIndex 。它们是当下 LLM 应"
   }
 ]
