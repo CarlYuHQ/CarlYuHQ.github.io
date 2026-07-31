@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-07-15",
+    "title": "Claude Code 多 Agent 平台与综合归位：从单兵作战到团队协作",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/15/LearnClaudeCode-%E5%A4%9AAgent%E5%B9%B3%E5%8F%B0%E4%B8%8E%E7%BB%BC%E5%90%88%E5%BD%92%E4%BD%8D/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「Claude Code 多 Agent 平台与综合归位：从单兵作战到团队协作」",
+    "excerpt": "本文是 Learn Claude Code 学习笔记的第四篇也是最终篇。前三篇讲了单 Agent 核心（循环&#x2F;工具&#x2F;权限&#x2F;Hook"
+  },
+  {
+    "date": "2026-07-15",
+    "title": "Claude Code 任务运行时：从临时计划到持久任务、后台执行与定时调度",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/15/LearnClaudeCode-%E4%BB%BB%E5%8A%A1%E8%BF%90%E8%A1%8C%E6%97%B6/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「Claude Code 任务运行时：从临时计划到持久任务、后台执行与定时调度」",
+    "excerpt": "本文是 Learn Claude Code 学习笔记的第三篇。前两篇讲了单 Agent 的六个核心机制和五种耐久性加固。这一篇讲怎么把工作从「会话内的临时计划」"
+  },
+  {
+    "date": "2026-07-15",
+    "title": "Claude Code 系统加固：让 Agent 在真实工程里跑得久、跑得稳",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/15/LearnClaudeCode-%E7%B3%BB%E7%BB%9F%E5%8A%A0%E5%9B%BA/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「Claude Code 系统加固：让 Agent 在真实工程里跑得久、跑得稳」",
+    "excerpt": "本文是 Learn Claude Code 学习笔记的第二篇。第一篇讲了单 Agent 的六个核心机制（循环、工具路由、权限、Hook、待办、子代理）。这一篇讲"
+  },
+  {
+    "date": "2026-07-14",
+    "title": "Claude Code 的核心：所有机制挂在同一个循环上",
+    "url": "https://carlyuhq.github.io/Blogs/2026/07/14/LearnClaudeCode-%E6%A0%B8%E5%BF%83%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%8D%95Agent%E4%B8%BB%E5%B9%B2/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「Claude Code 的核心：所有机制挂在同一个循环上」",
+    "excerpt": "本文整理自 Learn Claude Code 课程的学习笔记。课程把一个 Claude Code 式的编码智能体拆成 20 步，每步只往主循环里加一个机制。本"
+  },
+  {
     "date": "2026-07-14",
     "title": "Docker 入门教程：从安装到实战",
     "url": "https://carlyuhq.github.io/Blogs/2026/07/14/Docker%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%AE%9E%E6%88%98/",
@@ -34,41 +70,5 @@
     "type": "blog",
     "label": "更新了博客「联网了却访问不了外网？网络分层、代理与 SSH 跳板详解」",
     "excerpt": "一个非常常见的困惑是：机器明明已经联网了，能访问校内网站、能 ping 通、能上镜像站，可一旦要访问 GitHub、某些境外 API 或克隆一个仓库，就卡住、超"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "Agent 意图识别怎么做？Skill 如何精准命中？",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/06/Agent%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E4%B8%8ESkill%E7%B2%BE%E5%87%86%E5%91%BD%E4%B8%AD/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「Agent 意图识别怎么做？Skill 如何精准命中？」",
-    "excerpt": "本文围绕两个 Agent 工程的核心问题展开：”Agent 意图识别怎么做？”与”Agent 如何精准命中 Skill？”。由于无法直接观看原短视频，文中内容综"
-  },
-  {
-    "date": "2026-07-05",
-    "title": "浅谈 LangChain 与 LlamaIndex",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/05/%E6%B5%85%E8%B0%88LangChain%E4%B8%8ELlamaIndex/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「浅谈 LangChain 与 LlamaIndex」",
-    "excerpt": "当你第一次想用大语言模型去回答”自己私人文档里的问题”时，几乎不可避免地会撞上两个名字： LangChain 与 LlamaIndex 。它们是当下 LLM 应"
-  },
-  {
-    "date": "2026-07-02",
-    "title": "RAG 全景解析：检索增强生成从原理到落地",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/02/RAG%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%E5%85%A8%E6%99%AF%E8%A7%A3%E6%9E%90/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「RAG 全景解析：检索增强生成从原理到落地」",
-    "excerpt": "大语言模型（LLM）能力再强，也逃不开”知其然不知其所以然”的尴尬：训练数据有截止日期、领域知识不够深、还时不时一本正经地胡说八道。 RAG（Retrieval"
-  },
-  {
-    "date": "2026-06-17",
-    "title": "Agentic-RL 详解：从 SFT 到 GRPO 的智能体训练",
-    "url": "https://carlyuhq.github.io/Blogs/2026/06/17/Agentic-RL%E8%AF%A6%E8%A7%A3-%E4%BB%8ESFT%E5%88%B0GRPO%E7%9A%84%E6%99%BA%E8%83%BD%E4%BD%93%E8%AE%AD%E7%BB%83/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「Agentic-RL 详解：从 SFT 到 GRPO 的智能体训练」",
-    "excerpt": "本文主要整理自 DataWhale Hello-Agents 的 Agentic-RL 章节，并结合 DeepSeekMath 论文 、 GRPO 相关解读 以"
   }
 ]
