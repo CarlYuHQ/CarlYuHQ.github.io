@@ -1,183 +1,121 @@
-# 谈谈我对这个项目的理解
-academicpages没有系统性的官方文档, 我在diy的时候遇到了很多困难, 因此撰写了这个文档用以参考
-- 项目源码: https://github.com/academicpages/academicpages.github.io
-- 我的DIY版本: https://github.com/ICUlizhi/ICUlizhi.github.io
-## 一. academicpages的文件系统
-本章可以跳过
-### 系统
-- _sass
-- _site : 本地运行生成的网站文件,网络部署无需此文件夹
-- assets : 核心代码
-- talkmap
-### 设置
-- _data
-    - _commets
-    - _authors.yml
-    - _navigation.yml
-    - _ui-text.yml
-- _includes
-- config.dev.yml
-- config.yml : 核心的设置文件
-### 网站内容
-- images : 放图片
-- files : 放文件
-- _draft,_talks,_teaching,_publications,_portfolio,_posts : 每个导航栏单独一个文件夹,存放markdown
-- _pages : 页面内容,放markdown和html
-- _layouts
-### 其他
-- markdown_generatot : md生成器
+# CarlYuHQ's site
 
-## 二. 配置
-### 云端部署
-使用github代理部署即可，想换域名也可以，网上都有教程,推荐一个校友的教程,和本项目是配套的 [戳这里](https://blog.csdn.net/qd1813100174/article/details/128604858?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172224250516800180610476%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=172224250516800180610476&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-128604858-null-null.142^v100^pc_search_result_base8&utm_term=%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5&spm=1018.2226.3001.4187)
-### 本地运行
-- 必须用linux,在windows上配置是极为困难的
-- academicpagesd的readme提供的环境配置很不仔细,遇到诸多版本问题,我使用了RVM调整ruby的版本,并手动加了一些包
+个人主页源码，基于 [academicpages](https://github.com/academicpages/academicpages.github.io) / [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) 3.4.2 的 Jekyll 站点，经 GitHub Actions 部署到 GitHub Pages。站点主体为自定义 **Animal Island** 主题，首页展示「最新动态」与「每日 Routine」。
 
-#### 1. 更新系统包列表并安装 GnuPG 2
+| 站点 | 地址 | 仓库 |
+| --- | --- | --- |
+| 个人主页 | https://carlyuhq.github.io/ | 本仓库 `CarlYuHQ/CarlYuHQ.github.io` |
+| 随笔博客（Hexo） | https://carlyuhq.github.io/Blogs/ | [CarlYuHQ/Blogs](https://github.com/CarlYuHQ/Blogs) |
+| 博客 Feed | https://carlyuhq.github.io/Blogs/atom.xml | 由 Hexo 生成 |
+
+**分工**：本仓库只生成主页；博客正文在 `Blogs` 仓库（Hexo 生成的静态产物：`index.html`、按日期的文章页、`tags/`、`categories/`、`atom.xml`），顶栏 **Blogs** 是外链（`_data/navigation.yml`）。主页不生成 `/Blogs/` 页面，而是通过 Feed 把最新文章标题同步到首页动态。
+
+## 技术栈
+
+| 层 | 实现 |
+| --- | --- |
+| 站点生成 | Jekyll + `github-pages` gem（`Gemfile`）；kramdown / Rouge / Liquid |
+| 样式与交互 | `assets/css/animal-island.scss`、`_sass/_animal-island-*.scss`、`assets/js/ac-interactions.js`、`assets/js/theme.js`（含日夜切换） |
+| 首页数据 | `_data/latest_updates.json`、`_data/routine.yml` → `_includes/ac-updates.html`、`_includes/ac-routine.html` → `_pages/about.md` |
+| 自动化 | Node.js 脚本 `scripts/sync-hexo-feed.js`、`scripts/routine.js`（仅用 Node 内置模块，无需 `npm install`） |
+| 部署 | `.github/workflows/pages-deploy.yml`：`actions/jekyll-build-pages` → `actions/deploy-pages` |
+
+## 目录结构
+
+| 路径 | 作用 |
+| --- | --- |
+| `_config.yml` / `_config.dev.yml` | 站点配置（站名、作者、collections、插件）/ 本地预览覆盖（`url: http://localhost:4000`、关闭 analytics、SCSS 不压缩） |
+| `_data/navigation.yml` | 顶栏：Notes、Repositories、Blogs（外链）、CV、Links |
+| `_pages/about.md` | 首页（`permalink: /`）：自我介绍、最新动态、每日打卡、访问地图、联系方式 |
+| `_Notes/`、`_Repositories/` | 课程笔记、项目条目（当前有内容的自定义集合） |
+| `_posts/`、`_drafts/`、`_publications/`、`_talks/`、`_teaching/`、`_portfolio/` | 上游 academicpages 的内容集合，各放一个 Markdown 文件 |
+| `_data/site_updates.yml` | 本站更新记录，手工维护 |
+| `_data/routine.yml` | 每日打卡（leetcode / reading / exercise），由脚本维护 |
+| `_data/hexo_latest.json`、`_data/latest_updates.json` | **脚本生成，不要手改**；后者为首页展示的数据源 |
+| `_includes/`、`_layouts/`、`_sass/`、`assets/` | 模板、布局、样式、JS 与字体 |
+| `images/`、`files/`、`images for how to use it/` | 图片、PDF、DIY 笔记截图 |
+| `scripts/`、`docs/` | 维护脚本、操作手册 |
+| `CHANGELOG.md`、`CONTRIBUTING.md` | 上游 Minimal Mistakes / academicpages 模板自带的文档，不是本站变更记录 |
+
+`_config.yml` 共声明 9 个 collections；其中 `Blogs` 已设为 `output: false`（随笔迁至 Hexo 后废弃），`Links`、`additions` 已声明但当前无对应目录。
+
+## 与博客仓库的联动
+
 ```
-sudo apt update
-sudo apt install gnupg2
+Blogs（Hexo） → atom.xml
+        → scripts/sync-hexo-feed.js（取前 8 条 entry）
+        → _data/hexo_latest.json
+        → 与 _data/site_updates.yml 合并、按日期倒序去重、取前 3 条
+        → _data/latest_updates.json
+        → _includes/ac-updates.html → _pages/about.md
 ```
 
-#### 2. 导入 RVM 的 GPG 密钥并安装 RVM
-```
-command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-\curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-```
-#### 3. 装ruby
-```
-rvm install ruby
-rvm docs generate-ri
-rvm use ruby --default
-```
-装成功了belike:
+| Workflow | 触发条件 | 行为 |
+| --- | --- | --- |
+| `pages-deploy.yml` | push `main`、`workflow_dispatch` | 构建 Jekyll 并发布 GitHub Pages |
+| `sync-feed.yml` | 每 5 分钟（`*/5 * * * *`）、`workflow_dispatch` | 运行同步脚本；JSON 有变化则自动 commit 并 push |
+| `on-blog-deploy.yml` | 每 5 分钟、`repository_dispatch: blog-deployed`、`workflow_dispatch` | 同上，额外用 `--strict`：Feed 拉取失败即失败，不回落缓存 |
 
-<img src = 'images for how to use it/image2.png'>
+`repository_dispatch` 需要 `Blogs` 仓库侧保留触发 workflow 与 Secret `HOME_SYNC_TOKEN`；`hexo deploy` 推送的是 `public/` 静态产物，会覆盖该仓库内容，可能冲掉 `.github/workflows`。配置步骤见 [docs/setup-home-sync-token.md](docs/setup-home-sync-token.md)。未配置时，两个每 5 分钟的定时同步仍会更新首页动态。
 
-#### 4. 安装项目依赖
-```
+## 本地开发
+
+```bash
+# 依赖 Ruby + Bundler（macOS / Linux；Windows 建议用 WSL）
 bundle install
+bundle exec jekyll serve --config _config.yml,_config.dev.yml
+# 打开 http://localhost:4000/
+
+# 若 Ruby 3.x 提示 webrick / faraday 缺失
 bundle add webrick faraday-retry
 ```
-#### 5. 运行代码
-```
-bundle exec jekyll liveserve
-```
-<img src = 'images for how to use it/image.png'>
 
-然后就可以在[http://localhost:4000/](http://localhost:4000/)看到我们的网站了,这个进程你不关闭它是不会停的,且会在运行中输出一些报错
+`package.json` 的脚本无需安装 npm 依赖即可使用（`sync-feed`、`routine`）；`build:css` / `build:js` 需要本机的 `sass` / `uglifyjs` 命令。
 
-## 三. diy方法
-### :star2: 基本信息设置
-- 请打开 ```_config.yml```
-- 这个文件里有大量个人信息, 建议从头开始改, 直到 author: 模块
-- 注意照片文件用png, 放在image文件夹
-### :star2: 在主页加一个记录访问情况的世界地图
-[点这里](https://mapmyvisitors.com/)
-- 在这个网站整一个,输出一个html对象,复制到 about.md 即可
+```bash
+npm run sync-feed                        # 手动同步博客 Feed
+npm run routine -- status               # 查看今日打卡
+npm run routine -- status 2026-05-22    # 查看指定日期
+npm run routine -- leetcode done 2      # 标记完成 + 题数
+npm run routine -- exercise undo        # 撤销
+```
 
-### :star2: 在任意页添加评论区
-[点这里](https://giscus.app/)
-- 在这个网站整一个,输出一个html对象,复制到对应页的 md 文件即可
-### :star2: 如何在导航栏中增加 Repositories 栏目
-以下代码块中的都需要添加, Repositories 可以根据需要修改为其他名称
-#### 1. config.yml 
+## 日常维护
 
-Collections模块
-```
-  Repositories:
-    output: true
-    permalink: /:collection/:path/
-```
-Defaults模块
-```
-  - scope:
-      path: ""
-      type: Repositories
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-```
-#### 2. _data/navigation.yml
-```
-  - title: "Repositories"
-    url: /Repositories/
-```
-#### 3. _pages/Repositories.md
-这个文件需要自行添加,参考代码如下:
-```
+| 任务 | 改哪里 | 收尾 |
+| --- | --- | --- |
+| 站名、作者、社交账号 | `_config.yml` 的 Site Settings / `author` | `git push origin main` |
+| 导航项 | `_data/navigation.yml` | 同上 |
+| 新增笔记 / 项目 | `_Notes/` / `_Repositories/` 下加 `.md` | 同上 |
+| 新增论文 / 报告 / 课程 | `_publications/` / `_talks/` / `_teaching/` / `_portfolio/` | 同上 |
+| 记一条本站动态 | `_data/site_updates.yml` 顶部加条目 | `npm run sync-feed` 后 push 两个 JSON |
+| 每日打卡 | `npm run routine -- ...`（写 `_data/routine.yml`） | `git add _data/routine.yml && git commit -m "routine: update" && git push` |
+| 发一篇博客 | 在 Hexo 源码仓库发文并 `hexo deploy` | Feed 同步自动完成；兜底 `npm run sync-feed` |
+
+新条目的 Front Matter 直接照抄现有文件（例：`_Repositories/Snakegame.md`）：
+
+```yaml
 ---
-layout: archive
-title: "Repositories"
-permalink: /Repositories/
-author_profile: true
----
-
-{% include base_path %}
-
-{% for post in site.Repositories reversed %}
-  {% include archive-single.html %}
-{% endfor %}
-```
-#### 4. _Repositories
-该栏目下的md文件需要放在根目录下的_Repositories文件夹中, 请自行创建, 例如PKU-2024-IBAL-cracked-version.md
-```
----
-title: "PKU-2024-IBAL-cracked-version"
+title: "Snakegame"
 collection: Repositories
 type: "Repositories"
-permalink: /Repositories/PKU-2024-IBAL-cracked-version
-venue: "Peking Univercity"
-date: 2024-07-28
+permalink: /Repositories/Snakegame
+venue: "Peking University"
+date: 2025-06-01
 location: "Beijing, China"
 ---
-英美文学概况的资料以及课程攻略,包含大模型写作业,给英文原著作摘要等功能
-- 状态 : 完结,开源
-- 链接 : [https://github.com/ICUlizhi/PKU-2024-IBAL-cracked-version](https://github.com/ICUlizhi/PKU-2024-IBAL-cracked-version)
 ```
-参考效果
-<img src = 'images for how to use it/image3.png'>
 
+`_data/site_updates.yml` 的单条格式：`date / type / title / label / excerpt / url / source`（`scripts/sync-hexo-feed.js` 用正则解析，字段顺序和缩进需与现有条目一致）。
 
+## 部署
 
-### :star2: 导航页代码参考
-以Notes页为例:
-#### Front Matter
-定义页面的元数据和布局信息
-```
----
-layout: archive
-title: "Notes"
-permalink: /Notes/
-author_profile: true
----
-```
-#### 展示指定的md文件 
-```
-{% include base_path %}
-{% assign paths = "概论统计A(现为信概统).md,hjfpython.md" | split: "," %}
-{% for post in site.Notes reversed %}
-  {% for path in paths %}
-    {% if post.path contains path %}
-      {% include archive-single.html %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-```
-这些md文件需要出现在根目录下_Notes文件夹中, 也可以直接遍历
-#### md文件的内容
-其实就是Front Matter+自由发挥的markdown,可参考[模版](https://github.com/ICUlizhi/academicpages-stu-/blob/main/files/nameofthemd.md)
+push 到 `main` 即触发 **Deploy Pages** workflow；也可在 Actions 里手动 `Run workflow`。GitHub Pages 的 Build and deployment 来源需设为 **GitHub Actions**。站点地址由 `_config.yml` 的 `url: https://carlyuhq.github.io` 与 workflow 共同决定，仓库无 `CNAME`。
 
-效果展示:
-<img src = 'images for how to use it/image4.png'>
+## 文档与上游
 
-## 主页动态与 Routine（2026 新增）
-
-- 维护文档见 [docs/home-updates-routine.md](docs/home-updates-routine.md)
-- Hexo 博客动态：`npm run sync-feed`
-- 每日打卡：`npm run routine -- leetcode done 2`
+- [docs/home-updates-routine.md](docs/home-updates-routine.md) — 首页动态与打卡维护说明
+- [docs/blog-and-routine-playbook.md](docs/blog-and-routine-playbook.md) — 发博客 / 打卡操作手册（含 Windows 路径示例）
+- [docs/setup-home-sync-token.md](docs/setup-home-sync-token.md) — 配置博客部署后自动触发主页同步
+- [docs/academicpages-diy-notes.md](docs/academicpages-diy-notes.md) — 旧版 README 原文归档：模板 DIY、Ruby 环境、导航栏扩展笔记
+- 上游：[academicpages](https://github.com/academicpages/academicpages.github.io)、[Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes)；许可证为 [MIT](LICENSE)（Copyright (c) 2016 Michael Rose）
