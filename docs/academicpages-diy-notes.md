@@ -180,6 +180,6 @@ author_profile: true
 
 ## 主页动态与 Routine（2026 新增）
 
-- 维护文档见 [docs/home-updates-routine.md](docs/home-updates-routine.md)
+- 维护文档见 [docs/home-updates-routine.md](home-updates-routine.md)
 - Hexo 博客动态：`npm run sync-feed`
 - 每日打卡：`npm run routine -- leetcode done 2`

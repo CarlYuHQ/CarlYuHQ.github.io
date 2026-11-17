@@ -38,7 +38,7 @@
 | `_data/hexo_latest.json`、`_data/latest_updates.json` | **脚本生成，不要手改**；后者为首页展示的数据源 |
 | `_includes/`、`_layouts/`、`_sass/`、`assets/` | 模板、布局、样式、JS 与字体 |
 | `images/`、`files/`、`images for how to use it/` | 图片、PDF、DIY 笔记截图 |
-| `scripts/`、`docs/` | 维护脚本、操作手册 |
+| `scripts/`、`docs/` | 维护脚本、操作手册；`docs/` 已在 `_config.yml` 的 `exclude` 中排除，不会发布到站点 |
 | `CHANGELOG.md`、`CONTRIBUTING.md` | 上游 Minimal Mistakes / academicpages 模板自带的文档，不是本站变更记录 |
 
 `_config.yml` 共声明 9 个 collections；其中 `Blogs` 已设为 `output: false`（随笔迁至 Hexo 后废弃），`Links`、`additions` 已声明但当前无对应目录。
