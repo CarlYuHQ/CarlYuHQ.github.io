@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="images/readme-avatar.png" alt="CarlYuHQ" width="180" />
+</p>
+
 # CarlYuHQ's site
 
 个人主页源码，基于 [academicpages](https://github.com/academicpages/academicpages.github.io) / [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) 3.4.2 的 Jekyll 站点，经 GitHub Actions 部署到 GitHub Pages。站点主体为自定义 **Animal Island** 主题，首页展示「最新动态」与「每日 Routine」。
