@@ -54,7 +54,7 @@ git push
 - Feed：https://carlyuhq.github.io/Blogs/atom.xml
 - 脚本：[`scripts/sync-hexo-feed.js`](../scripts/sync-hexo-feed.js)
 - 合并结果：[`_data/latest_updates.json`](../_data/latest_updates.json)
-- 定时同步：[`.github/workflows/sync-feed.yml`](../.github/workflows/sync-feed.yml)（每日 UTC 8:00）
+- 定时同步：[`.github/workflows/sync-feed.yml`](../.github/workflows/sync-feed.yml)（每小时整点，UTC）
 - 博客部署触发：[`.github/workflows/on-blog-deploy.yml`](../.github/workflows/on-blog-deploy.yml)
 
 ### 本站更新（手动）

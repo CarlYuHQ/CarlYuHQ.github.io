@@ -57,10 +57,10 @@ Blogs（Hexo） → atom.xml
 | Workflow | 触发条件 | 行为 |
 | --- | --- | --- |
 | `pages-deploy.yml` | push `main`、`workflow_dispatch` | 构建 Jekyll 并发布 GitHub Pages |
-| `sync-feed.yml` | 每 5 分钟（`*/5 * * * *`）、`workflow_dispatch` | 运行同步脚本；JSON 有变化则自动 commit 并 push |
-| `on-blog-deploy.yml` | 每 5 分钟、`repository_dispatch: blog-deployed`、`workflow_dispatch` | 同上，额外用 `--strict`：Feed 拉取失败即失败，不回落缓存 |
+| `sync-feed.yml` | 每小时整点（`0 * * * *`）、`workflow_dispatch` | 运行同步脚本；JSON 有变化则自动 commit 并 push |
+| `on-blog-deploy.yml` | `repository_dispatch: blog-deployed`、`workflow_dispatch` | 同上，额外用 `--strict`：Feed 拉取失败即失败，不回落缓存 |
 
-`repository_dispatch` 需要 `Blogs` 仓库侧保留触发 workflow 与 Secret `HOME_SYNC_TOKEN`；`hexo deploy` 推送的是 `public/` 静态产物，会覆盖该仓库内容，可能冲掉 `.github/workflows`。配置步骤见 [docs/setup-home-sync-token.md](docs/setup-home-sync-token.md)。未配置时，两个每 5 分钟的定时同步仍会更新首页动态。
+两个同步工作流共用 `concurrency: hexo-feed-sync`，并在 push 前执行 `git pull --rebase origin main`，避免并发提交导致 non-fast-forward。`repository_dispatch` 需要 `Blogs` 仓库侧保留触发 workflow 与 Secret `HOME_SYNC_TOKEN`；`hexo deploy` 推送的是 `public/` 静态产物，会覆盖该仓库内容，可能冲掉 `.github/workflows`。配置步骤见 [docs/setup-home-sync-token.md](docs/setup-home-sync-token.md)。未配置时，每小时的定时同步仍会更新首页动态。
 
 ## 本地开发
 

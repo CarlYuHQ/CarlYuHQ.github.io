@@ -1,8 +1,6 @@
 name: Sync feed on blog deploy
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   repository_dispatch:
     types: [blog-deployed]
   workflow_dispatch:
@@ -11,8 +9,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-feed-on-blog-deploy
-  cancel-in-progress: true
+  group: hexo-feed-sync
+  cancel-in-progress: false
 
 jobs:
   sync:
@@ -22,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Sync atom feed and merge updates
         env:
@@ -38,5 +36,6 @@ jobs:
             echo "No feed changes."
           else
             git commit -m "chore: sync Hexo feed after blog deploy"
+            git pull --rebase origin main
             git push
           fi
