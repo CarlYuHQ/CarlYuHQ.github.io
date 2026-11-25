@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-25",
+    "title": "从并行计算到 Tile-Level 编程：CUDA、Triton 与 TileLang",
+    "url": "https://carlyuhq.github.io/Blogs/2026/11/25/%E4%BB%8E%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E5%88%B0-Tile-Level-%E7%BC%96%E7%A8%8B/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「从并行计算到 Tile-Level 编程：CUDA、Triton 与 TileLang」",
+    "excerpt": "并行计算的核心问题只有一个：把一个计算任务切给更多计算单元，并让它们真正同时工作。本文沿一条自底向上的线索展开：计算与性能指标、可并行性与任务切分、Flynn "
+  },
+  {
     "date": "2026-07-31",
     "title": "Claude Code 多 Agent 平台与综合归位：从单兵作战到团队协作",
     "url": "https://carlyuhq.github.io/Blogs/2026/07/31/LearnClaudeCode-%E5%A4%9AAgent%E5%B9%B3%E5%8F%B0%E4%B8%8E%E7%BB%BC%E5%90%88%E5%BD%92%E4%BD%8D/",
@@ -61,14 +70,5 @@
     "type": "blog",
     "label": "更新了博客「Nanobot 源码详解：4000 行代码如何打造一个超轻量个人 AI 智能体」",
     "excerpt": "2026 年初，一个叫 Nanobot 🐈 的开源项目在几天内冲上数千 star，理由很有意思：它宣称用 约 4000 行 Python 就复现了那个 43 "
-  },
-  {
-    "date": "2026-07-07",
-    "title": "联网了却访问不了外网？网络分层、代理与 SSH 跳板详解",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/07/%E8%81%94%E7%BD%91%E4%BA%86%E5%8D%B4%E8%AE%BF%E9%97%AE%E4%B8%8D%E4%BA%86%E5%A4%96%E7%BD%91-%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E4%B8%8E%E4%BB%A3%E7%90%86%E8%B7%B3%E6%9D%BF%E8%AF%A6%E8%A7%A3/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「联网了却访问不了外网？网络分层、代理与 SSH 跳板详解」",
-    "excerpt": "一个非常常见的困惑是：机器明明已经联网了，能访问校内网站、能 ping 通、能上镜像站，可一旦要访问 GitHub、某些境外 API 或克隆一个仓库，就卡住、超"
   }
 ]
