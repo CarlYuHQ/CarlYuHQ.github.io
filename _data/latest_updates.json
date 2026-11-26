@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-26",
+    "title": "打满显存带宽：Roofline、Little&#x27;s Law 与 Reduce 的七级优化",
+    "url": "https://carlyuhq.github.io/Blogs/2026/11/26/%E6%89%93%E6%BB%A1%E6%98%BE%E5%AD%98%E5%B8%A6%E5%AE%BD-Roofline-%E4%B8%8E-Reduce-%E4%BC%98%E5%8C%96/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「打满显存带宽：Roofline、Little&#x27;s Law 与 Reduce 的七级优化」",
+    "excerpt": "一个 kernel 到底能跑多快？答案不在代码写得多巧，而在一个上界：算力峰值、显存带宽，以及访存模式离这个上界有多远。本文从 Roofline 出发，用 Li"
+  },
+  {
     "date": "2026-11-25",
     "title": "从并行计算到 Tile-Level 编程：CUDA、Triton 与 TileLang",
     "url": "https://carlyuhq.github.io/Blogs/2026/11/25/%E4%BB%8E%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E5%88%B0-Tile-Level-%E7%BC%96%E7%A8%8B/",
@@ -16,14 +25,5 @@
     "type": "blog",
     "label": "更新了博客「Claude Code 多 Agent 平台与综合归位：从单兵作战到团队协作」",
     "excerpt": "本文是 Learn Claude Code 学习笔记的第四篇也是最终篇。前三篇讲了单 Agent 核心（循环&#x2F;工具&#x2F;权限&#x2F;Hook"
-  },
-  {
-    "date": "2026-07-25",
-    "title": "Claude Code 任务运行时：从临时计划到持久任务、后台执行与定时调度",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/25/LearnClaudeCode-%E4%BB%BB%E5%8A%A1%E8%BF%90%E8%A1%8C%E6%97%B6/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「Claude Code 任务运行时：从临时计划到持久任务、后台执行与定时调度」",
-    "excerpt": "本文是 Learn Claude Code 学习笔记的第三篇。前两篇讲了单 Agent 的六个核心机制和五种耐久性加固。这一篇讲怎么把工作从「会话内的临时计划」"
   }
 ]
