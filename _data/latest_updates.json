@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-27",
+    "title": "从 Naive GEMM 到 Register Tiling：FP32 矩阵乘法的逐级优化",
+    "url": "https://carlyuhq.github.io/Blogs/2026/11/27/%E4%BB%8E-Naive-GEMM-%E5%88%B0-Register-Tiling/",
+    "source": "hexo",
+    "type": "blog",
+    "label": "更新了博客「从 Naive GEMM 到 Register Tiling：FP32 矩阵乘法的逐级优化」",
+    "excerpt": "矩阵乘法是少数能把一个 kernel 从带宽受限一路推到算力受限的算子。本文沿 FP32 GEMM 的完整优化路径，从每线程一个输出元素、shared memo"
+  },
+  {
     "date": "2026-11-26",
     "title": "打满显存带宽：Roofline、Little&#x27;s Law 与 Reduce 的七级优化",
     "url": "https://carlyuhq.github.io/Blogs/2026/11/26/%E6%89%93%E6%BB%A1%E6%98%BE%E5%AD%98%E5%B8%A6%E5%AE%BD-Roofline-%E4%B8%8E-Reduce-%E4%BC%98%E5%8C%96/",
@@ -16,14 +25,5 @@
     "type": "blog",
     "label": "更新了博客「从并行计算到 Tile-Level 编程：CUDA、Triton 与 TileLang」",
     "excerpt": "并行计算的核心问题只有一个：把一个计算任务切给更多计算单元，并让它们真正同时工作。本文沿一条自底向上的线索展开：计算与性能指标、可并行性与任务切分、Flynn "
-  },
-  {
-    "date": "2026-07-31",
-    "title": "Claude Code 多 Agent 平台与综合归位：从单兵作战到团队协作",
-    "url": "https://carlyuhq.github.io/Blogs/2026/07/31/LearnClaudeCode-%E5%A4%9AAgent%E5%B9%B3%E5%8F%B0%E4%B8%8E%E7%BB%BC%E5%90%88%E5%BD%92%E4%BD%8D/",
-    "source": "hexo",
-    "type": "blog",
-    "label": "更新了博客「Claude Code 多 Agent 平台与综合归位：从单兵作战到团队协作」",
-    "excerpt": "本文是 Learn Claude Code 学习笔记的第四篇也是最终篇。前三篇讲了单 Agent 核心（循环&#x2F;工具&#x2F;权限&#x2F;Hook"
   }
 ]
